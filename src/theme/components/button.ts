@@ -1,7 +1,7 @@
 import { ComponentStyleConfig } from "@chakra-ui/react";
 import { colors } from "../config/colors";
 
-const { orange, gray, white, black, orangeHover } = colors;
+const { orange, black, orangeHover } = colors;
 
 export const Button: ComponentStyleConfig = {
   variants: {
