@@ -11,7 +11,6 @@ import { FiUser, FiLock, FiMail, FiEye, FiEyeOff } from "react-icons/fi";
 import { useState } from "react";
 
 interface BarberInputProps extends InputProps {
-  id: string;
   isPassword?: boolean;
   iconType: "user" | "email" | "lock";
   eyerIconColor?: boolean;
