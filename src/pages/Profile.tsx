@@ -7,6 +7,7 @@ export default function Profile() {
       name="Thiago Pacheco"
       message="Bem vindo,"
       avatar="hhtp://github.com/tpaphysics"
+      type="header"
     />
   );
 }
