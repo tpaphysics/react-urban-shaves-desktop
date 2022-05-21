@@ -3,7 +3,7 @@ export const colors = {
   orangeHover: "#ffa733",
   white: "#F4EDE8",
   gray: {
-    one: "#999591",
+    normal: "#999591",
     hard: "#666360",
   },
   black: {

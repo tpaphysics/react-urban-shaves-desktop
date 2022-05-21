@@ -2,9 +2,9 @@ import { Icon, Text, TextProps, HStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { BsBoxArrowLeft, BsBoxArrowRight } from "react-icons/bs";
 
-// eslint-disable-next-line react/jsx-no-undef
 interface BarberLinkProps extends TextProps {
-  direction: "left" | "right";
+  direction?: "left" | "right";
+  color?: "white" | "orange";
 }
 
 const icon = {
@@ -12,18 +12,25 @@ const icon = {
   right: BsBoxArrowRight,
 };
 
-export function BarberLink({ direction, children, ...props }: BarberLinkProps) {
+export function BarberLink({
+  direction,
+  children,
+  color = "white",
+  ...props
+}: BarberLinkProps) {
   return (
     <Link to="profile">
-      <HStack>
-        <Icon
-          as={icon[direction]}
-          fontSize="md"
-          fontWeight="normal"
-          color="orange"
-        />
+      <HStack color="pink">
+        {direction && (
+          <Icon
+            as={icon[direction]}
+            fontSize="md"
+            fontWeight="normal"
+            color={color}
+          />
+        )}
 
-        <Text {...props} fontSize="md" fontWeight="normal" color="orange">
+        <Text {...props} fontSize="md" fontWeight="normal" color={color}>
           {children}
         </Text>
       </HStack>

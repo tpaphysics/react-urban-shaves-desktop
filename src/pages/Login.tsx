@@ -1,14 +1,16 @@
-import { Button, Input, VStack } from "@chakra-ui/react";
+import { Button, VStack } from "@chakra-ui/react";
 import React from "react";
-import { BarberInput } from "../components/basic/Input";
-import { BarberText } from "../components/Fonts/BarberDescription";
-import { BarberTextDescription } from "../components/Fonts/BarberTextDescription";
+import { BarberInput } from "../components/Basic/Input";
+
 import { BarberLink } from "../components/Links/BarberLink";
+import { BarberText } from "../components/Typograph/BarberText";
 
 export default function Login() {
   return (
     <VStack w="340px" align="center" justify="center">
-      <BarberTextDescription>Faça seu login</BarberTextDescription>
+      <BarberText color="white" size="2xl" fontWeight="700">
+        Faça seu login
+      </BarberText>
       <BarberInput iconType="email" id="email" placeholder="Name" />
       <BarberInput
         id="password"
@@ -17,8 +19,10 @@ export default function Login() {
         isPassword
       />
       <Button w="100%">Entrar</Button>
-      <BarberText>Esqueci minha senha</BarberText>
-      <BarberLink direction="right">Criar conta</BarberLink>
+      <BarberLink>Esqueci minha senha</BarberLink>
+      <BarberLink color="orange" direction="right">
+        Criar conta
+      </BarberLink>
     </VStack>
   );
 }
