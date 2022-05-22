@@ -1,12 +1,15 @@
 import React from "react";
-import { Hour } from "../components/Hour/Hour";
-import { TimeLineText } from "../components/TimeLine/TimeLineText";
+import {
+  BigAppointmentCard,
+  SmallAppointmentCard,
+} from "../components/AppointmentsCards/SmallAppointmentCard";
 
 export default function Profile() {
   return (
-    <>
-      <TimeLineText period="Manhã" />
-      <Hour time="08:00" size="large" />
-    </>
+    <SmallAppointmentCard
+      avatar="https://avatars.githubusercontent.com/u/46402647?v=4"
+      name="Thiago Pacheco"
+      time="08:00"
+    />
   );
 }
