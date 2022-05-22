@@ -1,4 +1,4 @@
-import { Text, TextProps } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { BarberTextProps } from "./BarberTextProps";
 
 export function BarberText({

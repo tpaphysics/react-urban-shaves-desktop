@@ -1,13 +1,12 @@
 import React from "react";
-import { AvatarUserProfile } from "../components/Header/parts/AvatarUserProfile";
+import { Hour } from "../components/Hour/Hour";
+import { TimeLineText } from "../components/TimeLine/TimeLineText";
 
 export default function Profile() {
   return (
-    <AvatarUserProfile
-      name="Thiago Pacheco"
-      message="Bem vindo,"
-      avatar="hhtp://github.com/tpaphysics"
-      type="header"
-    />
+    <>
+      <TimeLineText period="Manhã" />
+      <Hour time="08:00" size="large" />
+    </>
   );
 }
