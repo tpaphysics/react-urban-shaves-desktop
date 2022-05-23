@@ -1,27 +1,40 @@
-import { Avatar, HStack } from "@chakra-ui/react";
-import React from "react";
+import { Box, HStack, StackProps } from "@chakra-ui/react";
 import { AvatarUserProfile } from "../Header/parts/AvatarUserProfile";
 import { Hour } from "../Hour/Hour";
-import { BarberText } from "../Typograph/BarberText";
 
-interface BigAppointmentCard {
+interface BigAppointmentCard extends StackProps {
   avatar: string;
   name: string;
   time: string;
 }
 
-export function BigAppointmentCard({ avatar, name, time }: BigAppointmentCard) {
+export function BigAppointmentCard({
+  avatar,
+  name,
+  time,
+  ...props
+}: BigAppointmentCard) {
   return (
     <HStack
-      w="640px"
+      w="100%"
+      maxW="640px"
       bg="black.shape"
       borderRadius="10px"
-      px="6"
-      py="4"
-      justify="space-between"
+      {...props}
     >
-      <AvatarUserProfile name={name} type="BigCard" avatar={avatar} />
-      <Hour size="large" time={time} />
+      <Box w="2px" h="80px" bg="orange" />
+      <HStack
+        w="100%"
+        maxW="639px"
+        bg="black.shape"
+        borderRadius="10px"
+        px="6"
+        py="4"
+        justify="space-between"
+      >
+        <AvatarUserProfile name={name} type="BigCard" avatar={avatar} />
+        <Hour size="large" time={time} />
+      </HStack>
     </HStack>
   );
 }

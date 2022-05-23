@@ -1,10 +1,9 @@
-import { Avatar, HStack } from "@chakra-ui/react";
+import { HStack, StackProps } from "@chakra-ui/react";
 import React from "react";
 import { AvatarUserProfile } from "../Header/parts/AvatarUserProfile";
 import { Hour } from "../Hour/Hour";
-import { BarberText } from "../Typograph/BarberText";
 
-interface SmallAppointmentCard {
+interface SmallAppointmentCard extends StackProps {
   avatar: string;
   name: string;
   time: string;
@@ -14,9 +13,10 @@ export function SmallAppointmentCard({
   avatar,
   name,
   time,
+  ...props
 }: SmallAppointmentCard) {
   return (
-    <HStack spacing="7">
+    <HStack spacing="7" {...props}>
       <Hour size="small" time={time} />
       <HStack
         w="544px"
