@@ -1,4 +1,4 @@
-import { Flex, Icon } from "@chakra-ui/react";
+import { Flex, Icon, IconButton } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
@@ -20,9 +20,29 @@ function HeaderPanel({ month, year }: HeaderPanel) {
       borderTopRadius="10px"
       fontWeight="600"
     >
-      <Icon as={AiOutlineArrowLeft} color="gray.stroke" />
+      <IconButton
+        as={AiOutlineArrowLeft}
+        bg="transparent"
+        _hover={{
+          bg: "transparent",
+        }}
+        color="gray.normal"
+        size="xs"
+        aria-label="Arrow Left"
+        cursor="pointer"
+      />
       {`${month} - ${year}`}
-      <Icon as={AiOutlineArrowRight} />
+      <IconButton
+        as={AiOutlineArrowRight}
+        bg="transparent"
+        _hover={{
+          bg: "transparent",
+        }}
+        color="gray.normal"
+        size="xs"
+        aria-label="Arrow Right"
+        cursor="pointer"
+      />
     </Flex>
   );
 }

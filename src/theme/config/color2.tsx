@@ -1,6 +1,6 @@
 export const colors = {
-  orange: "#D8B370",
-  orangeHover: "#fed382",
+  orange: "#FF9000",
+  orangeHover: "#ffa733",
   white: "#F4EDE8",
   gray: {
     normal: "#999591",
@@ -9,7 +9,7 @@ export const colors = {
   black: {
     shape: "#3E3B47",
     medium: "#28262E",
-    background: "#493D30",
-    inputs: "#2f271e",
+    background: "#312E38",
+    inputs: "#232129",
   },
 };
