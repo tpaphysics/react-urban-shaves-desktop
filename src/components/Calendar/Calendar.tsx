@@ -56,7 +56,7 @@ export default function Calendar() {
       <WeekDayPanel weekDays={weekDays} weekDay={data.weekDayNow} />
       <MonthDaysPanel
         dayNow={data.dayNow}
-        lastDayOfMonth={data.lastDayMonth - 3}
+        lastDayOfMonth={data.lastDayMonth}
         cb={(day) => console.log(day)}
         primaryWeekDayOfMonth={data.primaryWeekDayOfMonth} // Ter-Qua-Qui
       />

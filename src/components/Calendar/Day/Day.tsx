@@ -8,6 +8,7 @@ interface DayProps extends ButtonProps {
 export function Day({ day, dayNow, bg = "black.shape", ...props }: DayProps) {
   return (
     <Button
+      disabled={day < dayNow && true}
       variant="none"
       size="sm"
       // autoFocus={dayNow === day && true}
@@ -23,7 +24,7 @@ export function Day({ day, dayNow, bg = "black.shape", ...props }: DayProps) {
       fontWeight={dayNow === day ? "700" : "400"}
       borderRadius="10px"
       color={dayNow === day ? "black.inputs" : "white"}
-      bg={day > 0 ? (dayNow === day ? "orange" : bg) : "black.inputs"}
+      bg={day > 0 ? (dayNow === day ? "gray.hard" : bg) : "black.inputs"}
       align="center"
       justify="center"
     >
