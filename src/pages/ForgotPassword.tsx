@@ -8,15 +8,13 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-import background from "../assets/bg1.png";
+import background from "../assets/bg3.png";
 import logo from "../assets/logo.png";
-import { avatars } from "../components/AvatarPersons/array";
-import Avatars from "../components/AvatarPersons/AvatarPersons";
 import { BarberInput } from "../components/Basic/Input";
 import { BarberLink } from "../components/Links/BarberLink";
 import { BarberText } from "../components/Typograph/BarberText";
 
-export default function Login() {
+export default function ForgotPassword() {
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
@@ -30,29 +28,29 @@ export default function Login() {
       align="center"
       justify="center"
     >
-      <Flex w="40%" h="100vh" align="center" justify="center" minW="388px">
+      <Flex
+        w="40%"
+        h="100vh"
+        align="center"
+        justify="center"
+        minW="388px"
+        flexDir="column"
+      >
         <Flex flexDir="column" w="340px" align="center" justify="center">
           <Image src={logo} m="0 auto" mb="6" />
-          <VStack mb="6" borderRadius="10px" w="340px" align="center" p="4">
-            <BarberText size="md" fontWeight="600" color="orangeFont" ml="-20">
-              Be your best version
-            </BarberText>
-            <Avatars avatarSize="md" avatars={avatars} ml="10" />
-          </VStack>
+          <BarberText size="lg" fontWeight="600" mb="6" color="orangeFont">
+            Recover my password
+          </BarberText>
           <VStack>
-            <BarberInput iconType="user" placeholder="E-mail" w="340px" />
-            <BarberInput iconType="lock" placeholder="Password" isPassword />
+            <BarberInput iconType="email" placeholder="E-mail" w="340px" />
           </VStack>
           <Button mt="6" w="100%">
-            Sigin
+            Send email
           </Button>
-          <VStack mt="8" spacing={6}>
-            <BarberLink to="/forgot">Forgot your password?</BarberLink>
-            <BarberLink to="/register" direction="right" color="orange">
-              Create your account
-            </BarberLink>
-          </VStack>
         </Flex>
+        <BarberLink to="/" direction="left" color="orange" mt="8">
+          Go to login
+        </BarberLink>
       </Flex>
       <Flex
         display={!isWideVersion ? "none" : "flex"}

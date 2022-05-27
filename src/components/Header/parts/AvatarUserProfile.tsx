@@ -1,10 +1,10 @@
 /* eslint-disable import/named */
-import { Avatar, HStack, VStack } from "@chakra-ui/react";
+import { Avatar, HStack, StackProps, VStack } from "@chakra-ui/react";
 import React from "react";
 import { BarberText } from "../../Typograph/BarberText";
 import { BarberTextProps } from "../../Typograph/BarberTextProps";
 
-interface AvatarUserProfileProps {
+interface AvatarUserProfileProps extends StackProps {
   name: string;
   message?: string;
   avatar: string;
@@ -34,11 +34,17 @@ export function AvatarUserProfile({
   name,
   message,
   type,
+  ...props
 }: AvatarUserProfileProps) {
   const { avatarSize, fontSize, spacing } = sizes[type];
   return (
-    <HStack spacing={spacing}>
-      <Avatar name={name} src={avatar} size={avatarSize} />
+    <HStack spacing={spacing} {...props}>
+      <Avatar
+        name={name}
+        src={avatar}
+        size={avatarSize}
+        filter="grayscale(75)"
+      />
       <VStack align="left" spacing="0">
         {type === "header" && <BarberText>{message}</BarberText>}
 
