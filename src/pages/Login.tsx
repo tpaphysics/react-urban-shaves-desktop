@@ -57,7 +57,6 @@ export default function Login() {
       <Flex
         display={!isWideVersion ? "none" : "flex"}
         w="60%"
-        bg="red"
         h="100vh"
         align="center"
         justify="center"

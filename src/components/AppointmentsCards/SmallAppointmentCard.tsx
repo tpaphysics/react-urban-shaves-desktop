@@ -16,10 +16,11 @@ export function SmallAppointmentCard({
   ...props
 }: SmallAppointmentCard) {
   return (
-    <HStack spacing="7" {...props}>
+    <HStack spacing="7" {...props} w="100%">
       <Hour size="small" time={time} />
       <HStack
-        w="544px"
+        w="100%"
+        maxW="544px"
         bg="black.shape"
         borderRadius="10px"
         px="4"

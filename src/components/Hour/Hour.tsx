@@ -15,7 +15,7 @@ const sizes = {
   },
   large: {
     fontSize: "lg",
-    color: "gray",
+    color: "orangeFontHard",
   },
 };
 

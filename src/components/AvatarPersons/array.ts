@@ -4,17 +4,17 @@ import t3 from "../../assets/t3.png";
 
 export const avatars = [
   {
-    name: "Thiago Pacheco",
+    name: "Thiago",
     url: t1,
   },
 
   {
-    name: "Tom Franklin",
-    url: t3,
+    name: "Blaiser",
+    url: t2,
   },
 
   {
-    name: "Snap Blaiser",
-    url: t2,
+    name: "Daniel",
+    url: t3,
   },
 ];
