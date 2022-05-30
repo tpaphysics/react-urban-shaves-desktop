@@ -15,13 +15,13 @@ O projeto <strong>Urban Shaves</strong> foi desenvolvido em [React](https://reac
 
 ## **🔖 Layout**
 
-<p>Foi criado o nome e a logo <strong>Urban Shaves</strong>, utilizamos a seguinte tabela de cores:
+<p>Criamos a logo <strong>Urban Shaves</strong>, utilizamos a seguinte tabela de cores:
 </p>
 <img alt="paleta" src="./src/assets/pallet.png" width="300px">
   
 <br/>
   
-Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Criamos próprio calendário pois foi achamos mais fácil criar outro ao invés de adaptar algum ao projeto.
+Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Criamos um próprio calendário pois foi mais fácil criar outro ao invés de adaptar algum ao projeto.
   
 ####  **Web**
   
