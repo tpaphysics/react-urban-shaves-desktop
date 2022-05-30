@@ -1,7 +1,6 @@
 import {
   Button,
   Flex,
-  HStack,
   VStack,
   Image,
   useBreakpointValue,
@@ -22,15 +21,8 @@ export default function Login() {
     lg: true,
   });
   return (
-    <HStack
-      w="100%"
-      maxW="100vw"
-      h="100vh"
-      spacing="0"
-      align="center"
-      justify="center"
-    >
-      <Flex w="40%" h="100vh" align="center" justify="center" minW="388px">
+    <Flex w="100%" maxW="100vw" h="100vh" align="center" justify="center">
+      <Flex w="40%" h="100vh" align="center" justify="center">
         <Flex flexDir="column" w="340px" align="center" justify="center">
           <Image src={logo} m="0 auto" mb="6" />
           <VStack mb="6" borderRadius="10px" w="340px" align="center" p="4">
@@ -64,6 +56,6 @@ export default function Login() {
         bgSize="cover"
         bgRepeat="no-repeat"
       />
-    </HStack>
+    </Flex>
   );
 }

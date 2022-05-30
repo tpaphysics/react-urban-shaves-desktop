@@ -15,13 +15,7 @@ export function BigAppointmentCard({
   ...props
 }: BigAppointmentCard) {
   return (
-    <HStack
-      w="100%"
-      maxW="640px"
-      bg="black.shape"
-      borderRadius="10px"
-      {...props}
-    >
+    <HStack w="100%" bg="black.shape" borderRadius="10px" {...props}>
       <Box w="2px" h="80px" bg="orange" />
       <HStack
         w="100%"

@@ -1,5 +1,11 @@
 /* eslint-disable import/named */
-import { Avatar, HStack, StackProps, VStack } from "@chakra-ui/react";
+import {
+  Avatar,
+  HStack,
+  StackProps,
+  useBreakpointValue,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 import { BarberText } from "../../Typograph/BarberText";
 import { BarberTextProps } from "../../Typograph/BarberTextProps";
@@ -36,20 +42,24 @@ export function AvatarUserProfile({
   type,
   ...props
 }: AvatarUserProfileProps) {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
   const { avatarSize, fontSize, spacing } = sizes[type];
   return (
     <HStack spacing={spacing} {...props}>
       <Avatar
         name={name}
         src={avatar}
-        size={avatarSize}
+        size={isWideVersion ? avatarSize : "lg"}
         filter="grayscale(75)"
       />
       <VStack align="left" spacing="0">
         {type === "header" && <BarberText>{message}</BarberText>}
 
         <BarberText
-          size={fontSize as BarberTextProps["size"]}
+          size={isWideVersion ? (fontSize as BarberTextProps["size"]) : "lg"}
           color={type === "header" ? "orange" : "white"}
           fontWeight="700"
         >
