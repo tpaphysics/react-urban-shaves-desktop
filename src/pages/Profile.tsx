@@ -5,6 +5,7 @@ import { SmallAppointmentCard } from "../components/AppointmentsCards/SmallAppoi
 import Calendar from "../components/Calendar/Calendar";
 import DateText from "../components/DateText/DateText";
 import { Header } from "../components/Header";
+import SideBar from "../components/Sidebar/SideBar";
 import { TimeLineText } from "../components/TimeLine/TimeLineText";
 import { BarberText } from "../components/Typograph/BarberText";
 
@@ -15,13 +16,13 @@ function Profile() {
   });
   return (
     <VStack h="100%" w="100%" minH="100vh" minW="100vw" spacing="0">
-      {isWideVersion && (
-        <Header
-          name="Richard"
-          avatar="https://i.pravatar.cc/400?img=11"
-          message="Be Welcome"
-        />
-      )}
+      <Header
+        name="Richard"
+        avatar="https://i.pravatar.cc/400?img=11"
+        message="Be Welcome"
+      />
+      <SideBar />
+
       <Flex
         flex="1"
         w="100%"

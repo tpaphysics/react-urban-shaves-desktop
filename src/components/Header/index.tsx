@@ -1,7 +1,16 @@
-import { Heading, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import React from "react";
+import Hamburger from "hamburger-react";
 import logo from "../../assets/logo.png";
+import logoSmall from "../../assets/logo-sm.png";
 import { AvatarUserProfile } from "./parts/AvatarUserProfile";
+import { useSidebarDrawer } from "../../hooks/SideBarHook";
 
 interface HeaderProps {
   name: string;
@@ -10,24 +19,44 @@ interface HeaderProps {
 }
 
 export function Header({ avatar, message, name }: HeaderProps) {
+  const { onToggle, isOpen } = useSidebarDrawer();
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
   return (
     <Heading
       display="flex"
       bg="black.inputs"
-      h="144px"
+      h={{ base: "100px", lg: "144px" }}
       alignItems="center"
-      px="40"
+      px={{ lg: "40", base: "4" }}
       w="100%"
+      position={isWideVersion ? "unset" : "sticky"}
+      top="0"
+      zIndex="9"
     >
-      <Image src={logo} />
-      <AvatarUserProfile
-        cursor="pointer"
-        ml="16"
-        avatar={avatar}
-        name={name}
-        message={message}
-        type="header"
-      />
+      {isWideVersion ? (
+        <Image src={logo} />
+      ) : (
+        <Flex w="100%" justify="space-between">
+          <Image src={logoSmall} />
+          <Box color="orangeFontHard">
+            <Hamburger size={24} toggled={isOpen} onToggle={onToggle} />
+          </Box>
+        </Flex>
+      )}
+
+      {isWideVersion && (
+        <AvatarUserProfile
+          cursor="pointer"
+          ml="16"
+          avatar={avatar}
+          name={name}
+          message={message}
+          type="header"
+        />
+      )}
     </Heading>
   );
 }
