@@ -11,12 +11,8 @@ import logo from "../../assets/logo.png";
 import logoSmall from "../../assets/logo-sm.png";
 import { AvatarUserProfile } from "./parts/AvatarUserProfile";
 import { useSidebarDrawer } from "../../hooks/SideBarHook";
-
-interface HeaderProps {
-  name: string;
-  avatar: string;
-  message?: string;
-}
+import SideBar from "../Sidebar/SideBar";
+import { HeaderProps } from "./interfaces";
 
 export function Header({ avatar, message, name }: HeaderProps) {
   const { onToggle, isOpen } = useSidebarDrawer();
@@ -37,25 +33,30 @@ export function Header({ avatar, message, name }: HeaderProps) {
       zIndex="9"
     >
       {isWideVersion ? (
-        <Image src={logo} />
+        <>
+          <Image src={logo} />
+          <AvatarUserProfile
+            cursor="pointer"
+            ml="16"
+            avatar={avatar}
+            name={name}
+            message={message}
+            type="header"
+          />
+        </>
       ) : (
         <Flex w="100%" justify="space-between">
           <Image src={logoSmall} />
           <Box color="orangeFontHard">
             <Hamburger size={24} toggled={isOpen} onToggle={onToggle} />
           </Box>
+          <SideBar
+            name={name}
+            avatar={avatar}
+            type="header"
+            message="Be Welcome"
+          />
         </Flex>
-      )}
-
-      {isWideVersion && (
-        <AvatarUserProfile
-          cursor="pointer"
-          ml="16"
-          avatar={avatar}
-          name={name}
-          message={message}
-          type="header"
-        />
       )}
     </Heading>
   );

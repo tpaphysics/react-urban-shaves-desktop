@@ -1,21 +1,9 @@
 /* eslint-disable import/named */
-import {
-  Avatar,
-  HStack,
-  StackProps,
-  useBreakpointValue,
-  VStack,
-} from "@chakra-ui/react";
+import { Avatar, HStack, useBreakpointValue, VStack } from "@chakra-ui/react";
 import React from "react";
 import { BarberText } from "../../Typograph/BarberText";
 import { BarberTextProps } from "../../Typograph/BarberTextProps";
-
-interface AvatarUserProfileProps extends StackProps {
-  name: string;
-  message?: string;
-  avatar: string;
-  type: "header" | "BigCard" | "SmallCard";
-}
+import { AvatarUserProfileProps } from "../interfaces";
 
 const sizes = {
   header: {
