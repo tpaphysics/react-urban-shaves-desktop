@@ -8,6 +8,7 @@ import { fonts } from "./config/fonts";
 
 export const theme = extendTheme({
   // shadows: { outline: "0 0 0 3px var(--chakra-colors-yellow-500)" },
+  shadows: { outline: "0 0 0 2px var(--chakra-colors-orangeFontHard)" },
   styles,
   fonts,
   components: {
