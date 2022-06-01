@@ -8,23 +8,18 @@
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="Typescript" />
 <img src="https://img.shields.io/badge/Chakra--UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white" alt="Chakra-ui" />
 </div>
+<br/>
+<br/>
+<p align="center">
+<img  src="./src/assets/desktop/logo.png"/>
+</p>
 
 ## **💻 Projeto**
 
 O projeto <strong>Urban Shaves</strong> foi desenvolvido em [React](https://reactjs.org/) utilizando o [Chakra UI](https://chakra-ui.com/guides/first-steps).
 
-## **🔖 Layout**
+#### **Web**
 
-<p>Criamos a logo <strong>Urban Shaves</strong>, utilizamos a seguinte tabela de cores:
-</p>
-<img alt="paleta" src="./src/assets/pallet.png" width="300px">
-  
-<br/>
-  
-Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Criamos um próprio calendário pois foi mais fácil criar outro ao invés de adaptar algum ao projeto.
-  
-####  **Web**
-  
   <div>
     <img alt="login" src="./src/assets/desktop/login.png" width="100%">
     <br/>
@@ -52,8 +47,17 @@ Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e
   <img alt="dashboard1" src="./src/assets/mobile/dashboard1.png" widht="320px"/>
   <img alt="dashboard2" src="./src/assets/mobile/dashboard2.png" widht="320px">
   <img alt="profile" src="./src/assets/mobile/profile.png" widht="320px">
-  <img alt="sidebar" src="./src/assets/mobile/sidebar.png" widht="320px"/>
 </p>
+
+## **🔖 Layout**
+
+<p>Criamos a logo <strong>Urban Shaves</strong>, utilizamos a seguinte tabela de cores:
+</p>
+<img alt="paleta" src="./src/assets/pallet.png" width="300px">
+  
+<br/>
+  
+Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Criamos um próprio calendário pois foi mais fácil criar outro ao invés de adaptar algum ao projeto.
 
 ## Get Started
 
