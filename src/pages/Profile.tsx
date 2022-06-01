@@ -1,101 +1,95 @@
-import { VStack, Flex, useBreakpointValue, Box } from "@chakra-ui/react";
+import {
+  Avatar,
+  Flex,
+  Heading,
+  VStack,
+  Button,
+  AvatarBadge,
+  Icon,
+  IconButton,
+} from "@chakra-ui/react";
 import React from "react";
-import { BigAppointmentCard } from "../components/AppointmentsCards/BigAppointmentCard copy";
-import { SmallAppointmentCard } from "../components/AppointmentsCards/SmallAppointmentCard";
-import Calendar from "../components/Calendar/Calendar";
-import DateText from "../components/DateText/DateText";
-import { Header } from "../components/Header";
-import { TimeLineText } from "../components/TimeLine/TimeLineText";
+import { AiOutlineArrowLeft, AiOutlineCamera } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { BarberInput } from "../components/Basic/Input";
 import { BarberText } from "../components/Typograph/BarberText";
 
 function Profile() {
-  const isWideVersion = useBreakpointValue({
-    base: false,
-    lg: true,
-  });
   return (
-    <VStack h="100%" w="100%" minH="100vh" minW="100vw" spacing="0">
-      <Header
-        name="Richard"
-        avatar="https://i.pravatar.cc/400?img=11"
-        message="Be Welcome"
-      />
+    <Flex flexDir="column" justify="center" align="center">
+      <Heading
+        display="flex"
+        alignItems="center"
+        bg="black.inputs"
+        h={{ base: "100px", lg: "144px" }}
+        px={{ lg: "40", base: "4" }}
+        w="100%"
+      >
+        <Link to="/dashboard">
+          <IconButton
+            as={AiOutlineArrowLeft}
+            bg="transparent"
+            _hover={{
+              bg: "transparent",
+            }}
+            color="orangeFontHard"
+            size="xs"
+            aria-label="Arrow Left"
+            cursor="pointer"
+          />
+        </Link>
+      </Heading>
 
       <Flex
-        flex="1"
+        position="relative"
+        top="-60px"
+        flexDir="column"
+        align="left"
+        justify="center"
         w="100%"
-        minW="100vw"
-        m="0 auto"
-        px={{ base: 2, sm: 4, lg: 0 }}
-        py={{ base: 2, sm: 4, lg: 0 }}
+        maxW="340px"
       >
-        <Flex
-          w={isWideVersion ? "50%" : "100%"}
-          flexDir="column"
-          py={{ lg: "16" }}
-          paddingLeft={{ lg: "40" }}
-          alignItems="center"
-        >
-          <Box w="100%" maxW="520px" minW={{ lg: "420px" }} alignItems="center">
-            {!isWideVersion && (
-              <Flex my="16" align="center" flexDir="column">
-                <Calendar />
-              </Flex>
-            )}
-            <BarberText size="4xl" color="orangeFont">
-              Appointments
-            </BarberText>
-            <DateText />
-            <TimeLineText period="Next service" mt="12" />
-
-            <BigAppointmentCard
-              name="Joseph Neto"
-              avatar="https://i.pravatar.cc/400?img=13"
-              time="16:00"
-              mt="6"
+        <Flex w="100%" justify="center" mb="8">
+          <Avatar
+            size="2xl"
+            position="relative"
+            name="Richard"
+            src="https://i.pravatar.cc/400?img=11"
+            // filter="grayscale(75)"
+          >
+            <AvatarBadge
+              boxSize="0.9em"
+              bg="orange"
+              border="none"
+              cursor="pointer"
+              children={
+                <Icon as={AiOutlineCamera} w="6" color="black.background" />
+              }
             />
-
-            <TimeLineText period="Morning" mt="12" />
-
-            <SmallAppointmentCard
-              mt="12"
-              avatar="https://i.pravatar.cc/400?img=51"
-              name="Alex Ramos"
-              time="08:00"
-            />
-            <SmallAppointmentCard
-              mt="12"
-              avatar="https://i.pravatar.cc/256?u=a"
-              name="Eric Rapolla"
-              time="10:00"
-            />
-            <TimeLineText period="Afternoon" mt="12" />
-
-            <SmallAppointmentCard
-              mt="12"
-              avatar="https://i.pravatar.cc/150?u=10o"
-              name="Brian James"
-              time="08:00"
-            />
-            <SmallAppointmentCard
-              mt="12"
-              avatar="https://i.pravatar.cc/150?u=a042581f4e290267"
-              name="Lery Willians"
-              time="10:00"
-            />
-          </Box>
+          </Avatar>
         </Flex>
-        <Flex
-          w="50%"
-          flexDir="column"
-          py="16"
-          paddingLeft="40"
-          display={!isWideVersion ? "none" : "flex"}
-        >
-          <Calendar />
-        </Flex>
+
+        <BarberText size="lg" fontWeight="600" mb="6" color="orangeFont">
+          My profile
+        </BarberText>
+        <VStack>
+          <BarberInput iconType="user" placeholder="Name" w="340px" />
+          <BarberInput iconType="email" placeholder="E-mail" w="340px" />
+        </VStack>
+        <VStack mt="6">
+          <BarberInput iconType="lock" placeholder="Password" isPassword />
+          <BarberInput iconType="lock" placeholder="New password" isPassword />
+          <BarberInput
+            iconType="lock"
+            placeholder="Confirm new password"
+            isPassword
+          />
+        </VStack>
+        <Button mt="6" w="100%">
+          Confirm changes
+        </Button>
       </Flex>
-    </VStack>
+    </Flex>
   );
 }
 

@@ -1,6 +1,7 @@
 /* eslint-disable import/named */
 import { Avatar, HStack, useBreakpointValue, VStack } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 import { BarberText } from "../../Typograph/BarberText";
 import { BarberTextProps } from "../../Typograph/BarberTextProps";
 import { AvatarUserProfileProps } from "../interfaces";
@@ -36,24 +37,26 @@ export function AvatarUserProfile({
   });
   const { avatarSize, fontSize, spacing } = sizes[type];
   return (
-    <HStack spacing={spacing} {...props}>
-      <Avatar
-        name={name}
-        src={avatar}
-        size={isWideVersion ? avatarSize : "lg"}
-        filter="grayscale(75)"
-      />
-      <VStack align="left" spacing="0">
-        {type === "header" && <BarberText>{message}</BarberText>}
+    <Link to="/profile">
+      <HStack spacing={spacing} {...props}>
+        <Avatar
+          name={name}
+          src={avatar}
+          size={isWideVersion ? avatarSize : "lg"}
+          filter="grayscale(75)"
+        />
+        <VStack align="left" spacing="0">
+          {type === "header" && <BarberText>{message}</BarberText>}
 
-        <BarberText
-          size={isWideVersion ? (fontSize as BarberTextProps["size"]) : "lg"}
-          color={type === "header" ? "orange" : "white"}
-          fontWeight="700"
-        >
-          {name}
-        </BarberText>
-      </VStack>
-    </HStack>
+          <BarberText
+            size={isWideVersion ? (fontSize as BarberTextProps["size"]) : "lg"}
+            color={type === "header" ? "orange" : "white"}
+            fontWeight="700"
+          >
+            {name}
+          </BarberText>
+        </VStack>
+      </HStack>
+    </Link>
   );
 }

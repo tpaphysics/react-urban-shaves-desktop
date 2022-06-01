@@ -35,6 +35,9 @@ Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e
     <img alt="forgot" src="./src/assets/desktop/forgot.png" width="100%">
     <br/>
     <br/>
+    <img alt="profile" src="./src/assets/desktop/dashboard.png" width="100%">
+    <br/>
+    <br/>
     <img alt="profile" src="./src/assets/desktop/profile.png" width="100%">
   <div>
   
@@ -46,8 +49,12 @@ Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e
   <img alt="forgot" src="./src/assets/mobile/forgot.png" widht="320px">
 </p>
 <p align="center">
-  <img alt="profile1" src="./src/assets/mobile/profile1.png" widht="320px">
-  <img alt="profile2" src="./src/assets/mobile/profile2.png" widht="320px">
+  <img alt="dashboard1" src="./src/assets/mobile/dashboard1.png" widht="320px"/>
+  <img alt="dashboard2" src="./src/assets/mobile/dashboard2.png" widht="320px">
+</p>
+<p align="center">
+  <img alt="profile" src="./src/assets/mobile/profile.png" widht="320px">
+  <img alt="sidebar" src="./src/assets/mobile/sidebar.png" widht="320px"/>
 </p>
   
 ##  Get Started
