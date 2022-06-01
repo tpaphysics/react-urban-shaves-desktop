@@ -51,24 +51,21 @@ Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e
 <p align="center">
   <img alt="dashboard1" src="./src/assets/mobile/dashboard1.png" widht="320px"/>
   <img alt="dashboard2" src="./src/assets/mobile/dashboard2.png" widht="320px">
-</p>
-<p align="center">
   <img alt="profile" src="./src/assets/mobile/profile.png" widht="320px">
   <img alt="sidebar" src="./src/assets/mobile/sidebar.png" widht="320px"/>
 </p>
-  
-##  Get Started
-  
-  
+
+## Get Started
+
 ```bash
 # Instalação das dependências
 $ yarn
-  
+
 # Start
 $ yarn dev
 ```
-  
-##  Observação
+
+## Observação
 
 O projeto encontra-se em desenvolvimento juntamente com uma API desenvolvida em Nest.
 
