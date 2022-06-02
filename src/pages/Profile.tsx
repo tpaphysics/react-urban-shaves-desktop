@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { BarberInput } from "../components/Basic/Input";
 import { BarberText } from "../components/Typograph/BarberText";
 
-function Profile() {
+export default function Profile() {
   return (
     <Flex flexDir="column" justify="center" align="center">
       <Heading
@@ -92,5 +92,3 @@ function Profile() {
     </Flex>
   );
 }
-
-export default Profile;
