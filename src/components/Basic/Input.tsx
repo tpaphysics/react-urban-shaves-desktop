@@ -33,7 +33,7 @@ const iconsOptions = {
 };
 
 export function BarberInput({
-  isPassword = false,
+  isPassword,
   iconType,
   id,
   type,
@@ -66,9 +66,9 @@ export function BarberInput({
           }
         />
         <Input
+          id={id}
           {...props}
           {...register(id)}
-          id={id}
           type={isPassword ? (isVisiblePassword ? "text" : "password") : type}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
@@ -78,9 +78,9 @@ export function BarberInput({
         {isPassword && !errors?.[id] && (
           <InputRightElement
             height="100%"
-            onClick={() => setIsVisiblePassword(!isVisiblePassword)}
             children={
               <Icon
+                onClick={() => setIsVisiblePassword(!isVisiblePassword)}
                 as={isVisiblePassword ? FiEyeOff : FiEye}
                 color="gray.hard"
               />

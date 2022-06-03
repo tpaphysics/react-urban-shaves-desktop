@@ -1,6 +1,6 @@
-import t1 from "../../assets/t1.png";
-import t2 from "../../assets/t2.png";
-import t3 from "../../assets/t3.png";
+import t1 from "../../../assets/t1.png";
+import t2 from "../../../assets/t2.png";
+import t3 from "../../../assets/t3.png";
 
 export const avatars = [
   {

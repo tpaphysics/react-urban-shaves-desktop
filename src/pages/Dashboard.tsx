@@ -4,7 +4,7 @@ import { BigAppointmentCard } from "../components/AppointmentsCards/BigAppointme
 import { SmallAppointmentCard } from "../components/AppointmentsCards/SmallAppointmentCard";
 import Calendar from "../components/Calendar/Calendar";
 import DateText from "../components/DateText/DateText";
-import { Header } from "../components/Header";
+import { Header } from "../components/Header/Header";
 import { TimeLineText } from "../components/TimeLine/TimeLineText";
 import { BarberText } from "../components/Typograph/BarberText";
 
@@ -16,7 +16,7 @@ export function Dashboard() {
   return (
     <VStack h="100%" w="100%" minH="100vh" minW="100vw" spacing="0">
       <Header
-        name="Richard"
+        name="Richard Blake"
         avatar="https://i.pravatar.cc/400?img=11"
         message="Be Welcome"
       />
@@ -49,7 +49,7 @@ export function Dashboard() {
             <TimeLineText period="Next service" mt="12" />
 
             <BigAppointmentCard
-              name="Joseph Neto"
+              name="Josephy Alexander"
               avatar="https://i.pravatar.cc/400?img=13"
               time="16:00"
               mt="6"
@@ -80,7 +80,7 @@ export function Dashboard() {
             <SmallAppointmentCard
               mt="12"
               avatar="https://i.pravatar.cc/150?u=a042581f4e290267"
-              name="Lery Willians"
+              name="Lery James"
               time="10:00"
             />
           </Box>

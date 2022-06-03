@@ -9,27 +9,27 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 import { classValidatorResolver } from "@hookform/resolvers/class-validator";
-import background from "../assets/bg1.png";
-import logo from "../assets/logo.png";
+import background from "../../assets/bg1.png";
+import logo from "../../assets/logo.png";
 import { avatars } from "../components/AvatarPersons/array";
 import Avatars from "../components/AvatarPersons/AvatarPersons";
 import { BarberInput } from "../components/Basic/Input";
 import { BarberLink } from "../components/Links/BarberLink";
 import { BarberText } from "../components/Typograph/BarberText";
-import { Auth } from "../dto/auth.dto";
+import { LoginDto } from "../dto/login.dto";
 
 export default function Login() {
-  const resolver = classValidatorResolver(Auth);
+  const resolver = classValidatorResolver(LoginDto);
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
-  } = useForm<Auth>({ resolver });
+  } = useForm<LoginDto>({ resolver });
 
-  function onSubmit(values) {
+  function onSubmit(data: LoginDto) {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
-        console.log(values);
+        console.log(data);
         resolve();
       }, 3000);
     });

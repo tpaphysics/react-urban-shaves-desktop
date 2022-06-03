@@ -7,8 +7,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Hamburger from "hamburger-react";
-import logo from "../../assets/logo.png";
-import logoSmall from "../../assets/logo-sm.png";
+import logo from "../../../assets/logo.png";
+import logoSmall from "../../../assets/logo-sm.png";
 import { AvatarUserProfile } from "./parts/AvatarUserProfile";
 import { useSidebarDrawer } from "../../hooks/SideBarHook";
 import SideBar from "../Sidebar/SideBar";

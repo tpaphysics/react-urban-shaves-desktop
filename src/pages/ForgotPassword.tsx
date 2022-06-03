@@ -6,15 +6,33 @@ import {
   Image,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import React from "react";
+import { classValidatorResolver } from "@hookform/resolvers/class-validator";
+import { useForm } from "react-hook-form";
 
-import background from "../assets/bg3.png";
-import logo from "../assets/logo.png";
+import background from "../../assets/bg3.png";
+import logo from "../../assets/logo.png";
 import { BarberInput } from "../components/Basic/Input";
 import { BarberLink } from "../components/Links/BarberLink";
 import { BarberText } from "../components/Typograph/BarberText";
+import { ForgotDto } from "../dto/forgot.dto";
 
 export default function ForgotPassword() {
+  const resolver = classValidatorResolver(ForgotDto);
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+  } = useForm<ForgotDto>({ resolver });
+
+  function onSubmit(data: ForgotDto) {
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        console.log(data);
+        resolve();
+      }, 3000);
+    });
+  }
+
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
@@ -41,12 +59,22 @@ export default function ForgotPassword() {
           <BarberText size="lg" fontWeight="600" mb="6" color="orangeFont">
             Recover my password
           </BarberText>
-          <VStack>
-            <BarberInput iconType="email" placeholder="E-mail" w="340px" />
-          </VStack>
-          <Button mt="6" w="100%">
-            Send email
-          </Button>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <VStack>
+              <BarberInput
+                id="email"
+                type="email"
+                errors={errors}
+                register={register}
+                iconType="email"
+                placeholder="E-mail"
+                w="340px"
+              />
+            </VStack>
+            <Button mt="6" w="100%" type="submit" isLoading={isSubmitting}>
+              Send email
+            </Button>
+          </form>
         </Flex>
         <BarberLink to="/" direction="left" color="orange" mt="8">
           Go to login
