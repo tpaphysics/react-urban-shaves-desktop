@@ -45,8 +45,8 @@ export function Header({ avatar, message, name }: HeaderProps) {
           />
         </>
       ) : (
-        <Flex w="100%" justify="space-between">
-          <Image src={logoSmall} />
+        <Flex w="100%" justify="space-between" align="center">
+          <Image src={logoSmall} mb="1" />
           <Box color="orangeFontHard">
             <Hamburger size={24} toggled={isOpen} onToggle={onToggle} />
           </Box>

@@ -43,7 +43,8 @@ export function AvatarUserProfile({
           name={name}
           src={avatar}
           size={isWideVersion ? avatarSize : "lg"}
-          filter="grayscale(75)"
+          filter="grayscale(100%) brightness(130%)"
+          // filter="opacity(0.2) drop-shadow(0 0 0 #573c41)"
         />
         <VStack align="left" spacing="0">
           {type === "header" && <BarberText>{message}</BarberText>}

@@ -57,7 +57,7 @@ O projeto <strong>Urban Shaves</strong> foi desenvolvido em [React](https://reac
   
 <br/>
   
-Foi necessário o uso do [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Criamos um próprio calendário pois foi mais fácil criar outro ao invés de adaptar algum ao projeto.
+Usamos o [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Foi difícil achar um calendário para adaptar ao projeto então decidimos criar um próprio.
 
 ## Get Started
 
@@ -71,7 +71,7 @@ $ yarn dev
 
 ## Observação
 
-O projeto encontra-se em desenvolvimento juntamente com uma API desenvolvida em Nest.
+O projeto possui essa aplicação desktop, outra mobile e uma API que estão em desenvolvimento.
 
 ## **👨‍🚀 Autor**
 

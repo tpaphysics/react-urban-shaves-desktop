@@ -4,6 +4,7 @@ export const colors = {
   orangeFont: "#E6D1AB",
   orangeFontHard: "#af9d7a",
   white: "#F4EDE8",
+  purple: "#573C41",
   gray: {
     normal: "#999591",
     hard: "#666360",

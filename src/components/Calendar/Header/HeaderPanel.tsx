@@ -1,4 +1,4 @@
-import { Flex, Icon, IconButton } from "@chakra-ui/react";
+import { Flex, IconButton } from "@chakra-ui/react";
 import React from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
@@ -21,6 +21,7 @@ function HeaderPanel({ month, year }: HeaderPanel) {
       fontWeight="600"
     >
       <IconButton
+        disabled
         as={AiOutlineArrowLeft}
         bg="transparent"
         _hover={{
@@ -33,6 +34,7 @@ function HeaderPanel({ month, year }: HeaderPanel) {
       />
       {`${month} - ${year}`}
       <IconButton
+        disabled
         as={AiOutlineArrowRight}
         bg="transparent"
         _hover={{

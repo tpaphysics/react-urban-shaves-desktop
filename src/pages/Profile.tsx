@@ -9,7 +9,6 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { classValidatorResolver } from "@hookform/resolvers/class-validator";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineArrowLeft, AiOutlineCamera } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -30,11 +29,22 @@ export default function Profile() {
       setTimeout(() => {
         // eslint-disable-next-line no-restricted-syntax
 
-        console.log(data);
+        const { name, ...rest } = data;
+        console.log(rest);
         resolve();
       }, 3000);
     });
   }
+
+  /*
+  useEffect(() => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []); */
+
   return (
     <Flex flexDir="column" justify="center" align="center">
       <Heading
@@ -88,7 +98,6 @@ export default function Profile() {
             />
           </Avatar>
         </Flex>
-
         <BarberText size="lg" fontWeight="600" mb="6" color="orangeFont">
           My profile
         </BarberText>

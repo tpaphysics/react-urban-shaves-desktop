@@ -9,6 +9,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 import { classValidatorResolver } from "@hookform/resolvers/class-validator";
+import { useNavigate } from "react-router-dom";
 import background from "../../assets/bg1.png";
 import logo from "../../assets/logo.png";
 import { avatars } from "../components/AvatarPersons/array";
@@ -20,6 +21,7 @@ import { LoginDto } from "../dto/login.dto";
 
 export default function Login() {
   const resolver = classValidatorResolver(LoginDto);
+  const navigate = useNavigate();
   const {
     handleSubmit,
     register,
@@ -30,6 +32,7 @@ export default function Login() {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
         console.log(data);
+        navigate("/dashboard");
         resolve();
       }, 3000);
     });

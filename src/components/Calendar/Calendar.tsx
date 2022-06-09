@@ -1,24 +1,10 @@
-import { lastDayOfMonth } from "date-fns";
+import { lastDayOfMonth, addMonths } from "date-fns";
 import React, { useEffect, useState } from "react";
 import HeaderPanel from "./Header/HeaderPanel";
 import MonthDaysPanel from "./MonthDaysPanel/MonthDaysPanel";
+import { months } from "./months";
 import { WeekDayPanel } from "./WeekDayPanel/WeekDayPanel";
-
-const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"];
-const months = [
-  "Janeiro",
-  "Fevereiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
-];
+import { weekDays } from "./weekDays";
 
 interface DataCalendar {
   year: number;
@@ -28,10 +14,13 @@ interface DataCalendar {
   weekDayNow: number;
   dayNow: number;
 }
+
 export default function Calendar() {
   const [data, setData] = useState<DataCalendar>({} as DataCalendar);
+  const [date, setDate] = useState(new Date());
   useEffect(() => {
-    const date = new Date();
+    // const date = new Date();
+    // console.log(date);
     const year = date.getFullYear();
     const month = date.getMonth();
     const weekDayNow = date.getDay();
@@ -48,16 +37,22 @@ export default function Calendar() {
       weekDayNow,
       dayNow,
     });
-  }, []);
+    console.log(addMonths(date, 3));
+  }, [date]);
 
   return (
     <>
-      <HeaderPanel month={months[data.month]} year={data.year} />
+      <HeaderPanel
+        month={months[data.month]}
+        year={data.year}
+
+        // eslint-disable-next-line no-console
+      />
       <WeekDayPanel weekDays={weekDays} weekDay={data.weekDayNow} />
       <MonthDaysPanel
         dayNow={data.dayNow}
         lastDayOfMonth={data.lastDayMonth}
-        cb={(day) => console.log(day)}
+        cb={(day) => console.log(new Date(data.year, data.month, day))}
         primaryWeekDayOfMonth={data.primaryWeekDayOfMonth} // Ter-Qua-Qui
       />
     </>

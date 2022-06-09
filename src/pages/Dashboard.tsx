@@ -1,4 +1,4 @@
-import { VStack, Flex, useBreakpointValue, Box } from "@chakra-ui/react";
+import { VStack, Flex, useBreakpointValue, Box, Input } from "@chakra-ui/react";
 import React from "react";
 import { BigAppointmentCard } from "../components/AppointmentsCards/BigAppointmentCard copy";
 import { SmallAppointmentCard } from "../components/AppointmentsCards/SmallAppointmentCard";
