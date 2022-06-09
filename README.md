@@ -11,7 +11,7 @@
 <br/>
 <br/>
 <p align="center">
-<img  src="./src/assets/desktop/logo.png"/>
+<img  src="./assets/desktop/logo.png"/>
 </p>
 
 ## **💻 Projeto**
@@ -21,39 +21,39 @@ O projeto <strong>Urban Shaves</strong> foi desenvolvido em [React](https://reac
 #### **Web**
 
   <div>
-    <img alt="login" src="./src/assets/desktop/login.png" width="100%">
+    <img alt="login" src="./assets/desktop/login.png" width="100%">
     <br/>
     <br/>
-    <img alt="register" src="./src/assets/desktop/register.png" width="100%">
+    <img alt="register" src="./assets/desktop/register.png" width="100%">
     <br/>
     <br/>
-    <img alt="forgot" src="./src/assets/desktop/forgot.png" width="100%">
+    <img alt="forgot" src="./assets/desktop/forgot.png" width="100%">
     <br/>
     <br/>
-    <img alt="profile" src="./src/assets/desktop/dashboard.png" width="100%">
+    <img alt="profile" src="./assets/desktop/dashboard.png" width="100%">
     <br/>
     <br/>
-    <img alt="profile" src="./src/assets/desktop/profile.png" width="100%">
+    <img alt="profile" src="./assets/desktop/profile.png" width="100%">
   <div>
   
 ####  **Mobile**
   
 <p align="center">
-  <img alt="login" src="./src/assets/mobile/login.png" widht="320px">
-  <img alt="register" src="./src/assets/mobile/register.png" widht="320px">
-  <img alt="forgot" src="./src/assets/mobile/forgot.png" widht="320px">
+  <img alt="login" src="./assets/mobile/login.png" widht="320px">
+  <img alt="register" src="./assets/mobile/register.png" widht="320px">
+  <img alt="forgot" src="./assets/mobile/forgot.png" widht="320px">
 </p>
 <p align="center">
-  <img alt="dashboard1" src="./src/assets/mobile/dashboard1.png" widht="320px"/>
-  <img alt="dashboard2" src="./src/assets/mobile/dashboard2.png" widht="320px">
-  <img alt="profile" src="./src/assets/mobile/profile.png" widht="320px">
+  <img alt="dashboard1" src="./assets/mobile/dashboard1.png" widht="320px"/>
+  <img alt="dashboard2" src="./assets/mobile/dashboard2.png" widht="320px">
+  <img alt="profile" src="./assets/mobile/profile.png" widht="320px">
 </p>
 
 ## **🔖 Layout**
 
 <p>Criamos a logo <strong>Urban Shaves</strong>, utilizamos a seguinte tabela de cores:
 </p>
-<img alt="paleta" src="./src/assets/pallet.png" width="300px">
+<img alt="paleta" src="./assets/pallet.png" width="300px">
   
 <br/>
   
