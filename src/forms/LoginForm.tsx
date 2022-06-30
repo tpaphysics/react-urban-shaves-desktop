@@ -1,7 +1,8 @@
-import { VStack, Button } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { classValidatorResolver } from "@hookform/resolvers/class-validator";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import BarberButton from "../components/Basic/BarberButton";
 import { BarberInput } from "../components/Basic/Input";
 import { LoginDto } from "../dto/login.dto";
 
@@ -43,9 +44,9 @@ export function LoginForm() {
         />
       </VStack>
 
-      <Button mt="6" w="100%" type="submit" isLoading={isSubmitting}>
+      <BarberButton mt="6" w="100%" type="submit" isLoading={isSubmitting}>
         Sigin
-      </Button>
+      </BarberButton>
     </form>
   );
 }

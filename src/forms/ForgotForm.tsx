@@ -1,6 +1,7 @@
-import { VStack, Button } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { classValidatorResolver } from "@hookform/resolvers/class-validator";
 import { useForm } from "react-hook-form";
+import BarberButton from "../components/Basic/BarberButton";
 import { BarberInput } from "../components/Basic/Input";
 import { ForgotDto } from "../dto/forgot.dto";
 
@@ -33,9 +34,9 @@ export default function ForgotForm() {
           w="340px"
         />
       </VStack>
-      <Button mt="6" w="100%" type="submit" isLoading={isSubmitting}>
+      <BarberButton mt="6" w="100%" type="submit" isLoading={isSubmitting}>
         Send email
-      </Button>
+      </BarberButton>
     </form>
   );
 }
