@@ -1,42 +1,15 @@
-import {
-  Button,
-  Flex,
-  VStack,
-  Image,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Flex, VStack, Image, useBreakpointValue } from "@chakra-ui/react";
 import React from "react";
-import { useForm } from "react-hook-form";
 
-import { classValidatorResolver } from "@hookform/resolvers/class-validator";
-import { useNavigate } from "react-router-dom";
 import background from "../../assets/bg1.png";
 import logo from "../../assets/logo.png";
 import { avatars } from "../components/AvatarPersons/array";
 import Avatars from "../components/AvatarPersons/AvatarPersons";
-import { BarberInput } from "../components/Basic/Input";
 import { BarberLink } from "../components/Links/BarberLink";
 import { BarberText } from "../components/Typograph/BarberText";
-import { LoginDto } from "../dto/login.dto";
+import { LoginForm } from "../forms/LoginForm";
 
 export default function Login() {
-  const resolver = classValidatorResolver(LoginDto);
-  const navigate = useNavigate();
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm<LoginDto>({ resolver });
-
-  function onSubmit(data: LoginDto) {
-    return new Promise<void>((resolve) => {
-      setTimeout(() => {
-        console.log(data);
-        navigate("/dashboard");
-        resolve();
-      }, 3000);
-    });
-  }
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
@@ -53,29 +26,8 @@ export default function Login() {
             </BarberText>
             <Avatars avatarSize="md" avatars={avatars} ml="10" />
           </VStack>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <VStack>
-              <BarberInput
-                errors={errors}
-                id="email"
-                register={register}
-                iconType="user"
-                placeholder="E-mail"
-              />
-              <BarberInput
-                id="password"
-                register={register}
-                errors={errors}
-                iconType="lock"
-                placeholder="Password"
-                isPassword
-              />
-            </VStack>
 
-            <Button mt="6" w="100%" type="submit" isLoading={isSubmitting}>
-              Sigin
-            </Button>
-          </form>
+          <LoginForm />
 
           <VStack mt="8" spacing={6}>
             <BarberLink to="/forgot">Forgot your password?</BarberLink>

@@ -80,7 +80,7 @@ export function Dashboard() {
             <SmallAppointmentCard
               mt="12"
               avatar="https://i.pravatar.cc/150?u=a042581f4e290267"
-              name="Lery James"
+              name="Lery Antunes"
               time="10:00"
             />
           </Box>
