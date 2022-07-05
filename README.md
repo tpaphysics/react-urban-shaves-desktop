@@ -34,6 +34,9 @@ O projeto <strong>Urban Shaves</strong> foi desenvolvido em [React](https://reac
     <br/>
     <br/>
     <img alt="profile" src="./assets/desktop/profile.png" width="100%">
+    <br/>
+    <br/>
+    <img alt="avatar-edit" src="./assets/desktop/avatar-edit.png" width="100%">
   <div>
   
 ####  **Mobile**

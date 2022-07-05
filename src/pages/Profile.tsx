@@ -1,13 +1,7 @@
-import {
-  Avatar,
-  Flex,
-  Heading,
-  AvatarBadge,
-  Icon,
-  IconButton,
-} from "@chakra-ui/react";
-import { AiOutlineArrowLeft, AiOutlineCamera } from "react-icons/ai";
+import { Flex, Heading, IconButton } from "@chakra-ui/react";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { AvatarProfile } from "../components/Modal/AvatarProfile";
 import { BarberText } from "../components/Typograph/BarberText";
 import ProfileForm from "../forms/ProfileForm";
 
@@ -55,25 +49,8 @@ export default function Profile() {
         w="100%"
         maxW="340px"
       >
-        <Flex w="100%" justify="center" mb="8">
-          <Avatar
-            size="2xl"
-            position="relative"
-            name="Richard"
-            src="https://i.pravatar.cc/400?img=11"
-            // filter="grayscale(75)"
-          >
-            <AvatarBadge
-              boxSize="0.9em"
-              bg="orange"
-              border="none"
-              cursor="pointer"
-              children={
-                <Icon as={AiOutlineCamera} w="6" color="black.background" />
-              }
-            />
-          </Avatar>
-        </Flex>
+        <AvatarProfile />
+
         <BarberText size="lg" fontWeight="600" mb="6" color="orangeFont">
           My profile
         </BarberText>
