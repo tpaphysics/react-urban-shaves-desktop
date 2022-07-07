@@ -1,4 +1,5 @@
 import { VStack, Flex, useBreakpointValue, Box } from '@chakra-ui/react';
+import { useEffect } from 'react';
 
 import { BigAppointmentCard } from '../components/AppointmentsCards/BigAppointmentCard copy';
 import { SmallAppointmentCard } from '../components/AppointmentsCards/SmallAppointmentCard';
@@ -7,12 +8,20 @@ import DateText from '../components/DateText/DateText';
 import { Header } from '../components/Header/Header';
 import { TimeLineText } from '../components/TimeLine/TimeLineText';
 import { BarberText } from '../components/Typograph/BarberText';
+import useAuth from '../hooks/Auth';
 
 export function Dashboard() {
+  const { signIn } = useAuth();
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
   });
+  useEffect(() => {
+    return () => {
+      signIn({ email: 'kjljl', password: 'jlkjljk' });
+    };
+  }, []);
+
   return (
     <VStack h="100%" w="100%" minH="100vh" minW="100vw" spacing="0">
       <Header name="Richard Blake" avatar="https://i.pravatar.cc/400?img=11" message="Be Welcome" />

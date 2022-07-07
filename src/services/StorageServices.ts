@@ -22,4 +22,12 @@ export default {
     }
     return null;
   },
+  getToken: (): string | null => {
+    const user = localStorage.getItem('user:$$UrbanShaves@@');
+    if (user) {
+      const { access_token } = JSON.parse(user) as LoginResponseDto;
+      return access_token;
+    }
+    return null;
+  },
 };

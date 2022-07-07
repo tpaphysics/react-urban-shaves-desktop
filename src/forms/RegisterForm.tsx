@@ -1,10 +1,12 @@
 import { VStack } from '@chakra-ui/react';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
 
 import BarberButton from '../components/Basic/BarberButton';
 import { BarberInput } from '../components/Basic/Input';
 import { RegisterDto } from '../dto/register.dto';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function RegisterForm() {
   const resolver = classValidatorResolver(RegisterDto);
@@ -57,6 +59,7 @@ export default function RegisterForm() {
       <BarberButton mt="6" w="100%" type="submit" isLoading={isSubmitting}>
         Register
       </BarberButton>
+      <ToastContainer theme="colored" />
     </form>
   );
 }
