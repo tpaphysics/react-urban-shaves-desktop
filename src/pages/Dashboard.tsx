@@ -1,12 +1,12 @@
-import { VStack, Flex, useBreakpointValue, Box, Input } from "@chakra-ui/react";
-import React from "react";
-import { BigAppointmentCard } from "../components/AppointmentsCards/BigAppointmentCard copy";
-import { SmallAppointmentCard } from "../components/AppointmentsCards/SmallAppointmentCard";
-import Calendar from "../components/Calendar/Calendar";
-import DateText from "../components/DateText/DateText";
-import { Header } from "../components/Header/Header";
-import { TimeLineText } from "../components/TimeLine/TimeLineText";
-import { BarberText } from "../components/Typograph/BarberText";
+import { VStack, Flex, useBreakpointValue, Box } from '@chakra-ui/react';
+
+import { BigAppointmentCard } from '../components/AppointmentsCards/BigAppointmentCard copy';
+import { SmallAppointmentCard } from '../components/AppointmentsCards/SmallAppointmentCard';
+import Calendar from '../components/Calendar/Calendar';
+import DateText from '../components/DateText/DateText';
+import { Header } from '../components/Header/Header';
+import { TimeLineText } from '../components/TimeLine/TimeLineText';
+import { BarberText } from '../components/Typograph/BarberText';
 
 export function Dashboard() {
   const isWideVersion = useBreakpointValue({
@@ -15,11 +15,7 @@ export function Dashboard() {
   });
   return (
     <VStack h="100%" w="100%" minH="100vh" minW="100vw" spacing="0">
-      <Header
-        name="Richard Blake"
-        avatar="https://i.pravatar.cc/400?img=11"
-        message="Be Welcome"
-      />
+      <Header name="Richard Blake" avatar="https://i.pravatar.cc/400?img=11" message="Be Welcome" />
 
       <Flex
         flex="1"
@@ -27,16 +23,14 @@ export function Dashboard() {
         minW="100vw"
         m="0 auto"
         px={{ base: 2, sm: 4, lg: 0 }}
-        py={{ base: 2, sm: 4, lg: 0 }}
-      >
+        py={{ base: 2, sm: 4, lg: 0 }}>
         <Flex
-          w={isWideVersion ? "50%" : "100%"}
+          w={isWideVersion ? '50%' : '100%'}
           flexDir="column"
-          py={{ lg: "16" }}
-          paddingLeft={{ lg: "40" }}
-          alignItems="center"
-        >
-          <Box w="100%" maxW="520px" minW={{ lg: "420px" }} alignItems="center">
+          py={{ lg: '16' }}
+          paddingLeft={{ lg: '40' }}
+          alignItems="center">
+          <Box w="100%" maxW="520px" minW={{ lg: '420px' }} alignItems="center">
             {!isWideVersion && (
               <Flex my="16" align="center" flexDir="column">
                 <Calendar />
@@ -90,8 +84,7 @@ export function Dashboard() {
           flexDir="column"
           py="16"
           paddingLeft="40"
-          display={!isWideVersion ? "none" : "flex"}
-        >
+          display={!isWideVersion ? 'none' : 'flex'}>
           <Calendar />
         </Flex>
       </Flex>

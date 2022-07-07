@@ -1,10 +1,10 @@
-import { Flex, FlexProps } from "@chakra-ui/react";
+import { Flex, FlexProps } from '@chakra-ui/react';
 
 interface DayProps extends FlexProps {
   day: string;
 }
 
-export function WeekDay({ day, bg = "black.input", ...props }: DayProps) {
+export function WeekDay({ day, bg = 'black.input', ...props }: DayProps) {
   return (
     <Flex
       {...props}
@@ -14,8 +14,7 @@ export function WeekDay({ day, bg = "black.input", ...props }: DayProps) {
       borderRadius="10px"
       bg={bg}
       align="center"
-      justify="center"
-    >
+      justify="center">
       {day}
     </Flex>
   );

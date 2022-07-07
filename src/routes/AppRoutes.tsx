@@ -1,25 +1,24 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Dashboard } from "../pages/Dashboard";
-import ForgotPassword from "../pages/ForgotPassword";
-import Login from "../pages/Login";
-import Profile from "../pages/Profile";
-import Register from "../pages/Register";
-import PrivateRoute from "./PrivateRoute";
+import React from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
+import useAuth from '../hooks/Auth';
+import { Dashboard } from '../pages/Dashboard';
+import ForgotPassword from '../pages/ForgotPassword';
+import Login from '../pages/Login';
+import Profile from '../pages/Profile';
+import Register from '../pages/Register';
+import IsLogged from './IsLogged';
+import PrivateRoute from './PrivateRoute';
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot" element={<ForgotPassword />} />
-        <Route path="/profile" element={<Profile />} />
-
-        <Route
-          path="/dashboard"
-          element={<PrivateRoute component={<Dashboard />} />}
-        />
+        <Route path="/" element={<IsLogged component={<Login />} />} />
+        <Route path="/register" element={<IsLogged component={<Register />} />} />
+        <Route path="/forgot" element={<IsLogged component={<ForgotPassword />} />} />
+        <Route path="/profile" element={<PrivateRoute component={<Profile />} />} />
+        <Route path="/dashboard" element={<PrivateRoute component={<Dashboard />} />} />
       </Routes>
     </BrowserRouter>
   );

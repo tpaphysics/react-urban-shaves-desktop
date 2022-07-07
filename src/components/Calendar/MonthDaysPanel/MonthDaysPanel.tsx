@@ -1,8 +1,9 @@
-import { Flex } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { Day } from "../Day/Day";
+import { Flex } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
 
-interface MonthDaysPanel {
+import { Day } from '../Day/Day';
+
+interface MonthDaysPanelProps {
   lastDayOfMonth: number;
   primaryWeekDayOfMonth: number;
   cb: (day: number) => void;
@@ -14,10 +15,8 @@ function MonthDaysPanel({
   primaryWeekDayOfMonth,
   dayNow,
   cb,
-}: MonthDaysPanel) {
-  const [array, setArray] = useState(
-    Array.from({ length: lastDayOfMonth }, (v, i) => i + 1)
-  );
+}: MonthDaysPanelProps) {
+  const [array, setArray] = useState(Array.from({ length: lastDayOfMonth }, (v, i) => i + 1));
   useEffect(() => {
     setArray(Array.from({ length: lastDayOfMonth }, (v, i) => i + 1));
     if (primaryWeekDayOfMonth >= 1) {
@@ -26,18 +25,10 @@ function MonthDaysPanel({
       setArray([...complement, ...days]);
       console.log(Array.from({ length: lastDayOfMonth }, (v, i) => i + 1));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [primaryWeekDayOfMonth, cb]);
 
   return (
-    <Flex
-      flexWrap="wrap"
-      w="360px"
-      gap="2"
-      p="4"
-      bg="black.medium"
-      borderBottomRadius="10px"
-    >
+    <Flex flexWrap="wrap" w="360px" gap="2" p="4" bg="black.medium" borderBottomRadius="10px">
       {array.map((day) => (
         <Day
           day={day}

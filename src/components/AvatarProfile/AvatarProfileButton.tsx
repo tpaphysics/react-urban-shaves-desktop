@@ -1,15 +1,12 @@
-import { Flex, Avatar, AvatarBadge, Icon } from "@chakra-ui/react";
-import { AiOutlineCamera } from "react-icons/ai";
+import { Flex, Avatar, AvatarBadge, Icon } from '@chakra-ui/react';
+import { AiOutlineCamera } from 'react-icons/ai';
 
 interface AvatarProfileButtonProps {
   src: string;
   onClick: () => void;
 }
 
-export default function AvatarProfileButton({
-  src,
-  onClick,
-}: AvatarProfileButtonProps) {
+export default function AvatarProfileButton({ src, onClick }: AvatarProfileButtonProps) {
   return (
     <Flex w="100%" justify="center" mb="8">
       <Avatar
@@ -25,9 +22,7 @@ export default function AvatarProfileButton({
           border="none"
           cursor="pointer"
           onClick={onClick}
-          children={
-            <Icon as={AiOutlineCamera} w="6" color="black.background" />
-          }
+          children={<Icon as={AiOutlineCamera} w="6" color="black.background" />}
         />
         <input type="file" />
       </Avatar>

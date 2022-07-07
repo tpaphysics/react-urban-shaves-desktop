@@ -1,7 +1,12 @@
-import AppRoutes from "./routes/AppRoutes";
+import { AuthProvider } from './hooks/Auth/provider/AuthProvider';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
-  return <AppRoutes />;
+  return (
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
 }
 
 export default App;

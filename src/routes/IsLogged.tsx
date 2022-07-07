@@ -6,7 +6,7 @@ interface PrivateRoutesProps {
   component: JSX.Element;
 }
 
-export default function PrivateRoute({ component }: PrivateRoutesProps) {
+export default function IsLogged({ component }: PrivateRoutesProps) {
   const { isAuthenticate } = useAuth();
-  return isAuthenticate() ? component : <Navigate to="/" replace />;
+  return isAuthenticate() ? <Navigate to="/dashboard" replace /> : component;
 }

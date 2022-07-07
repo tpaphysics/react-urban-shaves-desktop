@@ -12,14 +12,14 @@ import {
   SliderTrack,
   Text,
   VStack,
-} from "@chakra-ui/react";
-import React, { useState, createRef, FormEvent, ChangeEvent } from "react";
-import Cropper from "react-avatar-editor";
-import { ChangeHandler } from "react-hook-form";
-import { AiOutlineCamera } from "react-icons/ai";
-import { MdGraphicEq } from "react-icons/md";
+} from '@chakra-ui/react';
+import React, { useState, createRef, FormEvent, ChangeEvent } from 'react';
+import Cropper from 'react-avatar-editor';
+import { ChangeHandler } from 'react-hook-form';
+import { AiOutlineCamera } from 'react-icons/ai';
+import { MdGraphicEq } from 'react-icons/md';
 
-const image = "https://images.unsplash.com/photo-1572958731731-2b7fdb0a9818";
+const image = 'https://images.unsplash.com/photo-1572958731731-2b7fdb0a9818';
 
 interface AvatarEditorProps {
   avatar: string;
@@ -30,7 +30,7 @@ export function AvatarEditor() {
   const [scale, setScale] = useState(1);
   const cropper = createRef<any>();
   const [file, setFile] = useState<any>(
-    "https://images.unsplash.com/photo-1572958731731-2b7fdb0a9818"
+    'https://images.unsplash.com/photo-1572958731731-2b7fdb0a9818'
   );
 
   const getImagePreview = () => {
@@ -58,16 +58,10 @@ export function AvatarEditor() {
       />
 
       <Flex w="286px" justifyContent="space-between" paddingY={4}>
-        <Button
-          as="label"
-          size="sm"
-          w="160px"
-          h="28px"
-          rightIcon={<AiOutlineCamera />}
-        >
+        <Button as="label" size="sm" w="160px" h="28px" rightIcon={<AiOutlineCamera />}>
           <input
             type="file"
-            style={{ display: "none" }}
+            style={{ display: 'none' }}
             onChange={(event) => setFile(event.target?.files[0])}
           />
           Select photo
@@ -82,8 +76,7 @@ export function AvatarEditor() {
         max={3}
         onChange={(val) => setScale(val)}
         step={0.01}
-        w="286px"
-      >
+        w="286px">
         <SliderTrack bg="black.inputs">
           <SliderFilledTrack bg="orange" />
         </SliderTrack>

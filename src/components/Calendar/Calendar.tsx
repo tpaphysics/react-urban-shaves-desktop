@@ -1,10 +1,11 @@
-import { lastDayOfMonth, addMonths } from "date-fns";
-import React, { useEffect, useState } from "react";
-import HeaderPanel from "./Header/HeaderPanel";
-import MonthDaysPanel from "./MonthDaysPanel/MonthDaysPanel";
-import { months } from "./months";
-import { WeekDayPanel } from "./WeekDayPanel/WeekDayPanel";
-import { weekDays } from "./weekDays";
+import { lastDayOfMonth, addMonths } from 'date-fns';
+import React, { useEffect, useState } from 'react';
+
+import HeaderPanel from './Header/HeaderPanel';
+import MonthDaysPanel from './MonthDaysPanel/MonthDaysPanel';
+import { WeekDayPanel } from './WeekDayPanel/WeekDayPanel';
+import { months } from './months';
+import { weekDays } from './weekDays';
 
 interface DataCalendar {
   year: number;

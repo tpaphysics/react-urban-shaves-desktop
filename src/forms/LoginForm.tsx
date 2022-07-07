@@ -1,14 +1,18 @@
-import { VStack } from "@chakra-ui/react";
-import { classValidatorResolver } from "@hookform/resolvers/class-validator";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import BarberButton from "../components/Basic/BarberButton";
-import { BarberInput } from "../components/Basic/Input";
-import { LoginDto } from "../dto/login.dto";
+import { VStack } from '@chakra-ui/react';
+import { classValidatorResolver } from '@hookform/resolvers/class-validator';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+
+import BarberButton from '../components/Basic/BarberButton';
+import { BarberInput } from '../components/Basic/Input';
+import { LoginDto } from '../dto/login.dto';
+import useAuth from '../hooks/Auth';
 
 export function LoginForm() {
   const resolver = classValidatorResolver(LoginDto);
   const navigate = useNavigate();
+  const { signIn } = useAuth();
+
   const {
     handleSubmit,
     register,
@@ -18,8 +22,9 @@ export function LoginForm() {
   function onSubmit(data: LoginDto) {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
-        console.log(data);
-        navigate("/dashboard");
+        signIn(data)
+          .then(() => navigate('dashboard'))
+          .catch((err) => console.log(err));
         resolve();
       }, 3000);
     });

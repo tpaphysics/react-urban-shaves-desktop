@@ -1,13 +1,12 @@
-import { Flex, VStack, Image, useBreakpointValue } from "@chakra-ui/react";
-import React from "react";
+import { Flex, VStack, Image, useBreakpointValue } from '@chakra-ui/react';
 
-import background from "../../assets/bg1.png";
-import logo from "../../assets/logo.png";
-import { avatars } from "../components/AvatarPersons/array";
-import Avatars from "../components/AvatarPersons/AvatarPersons";
-import { BarberLink } from "../components/Links/BarberLink";
-import { BarberText } from "../components/Typograph/BarberText";
-import { LoginForm } from "../forms/LoginForm";
+import background from '../../assets/bg1.png';
+import logo from '../../assets/logo.png';
+import Avatars from '../components/AvatarPersons/AvatarPersons';
+import { avatars } from '../components/AvatarPersons/array';
+import { BarberLink } from '../components/Links/BarberLink';
+import { BarberText } from '../components/Typograph/BarberText';
+import { LoginForm } from '../forms/LoginForm';
 
 export default function Login() {
   const isWideVersion = useBreakpointValue({
@@ -38,7 +37,7 @@ export default function Login() {
         </Flex>
       </Flex>
       <Flex
-        display={!isWideVersion ? "none" : "flex"}
+        display={!isWideVersion ? 'none' : 'flex'}
         w="60%"
         h="100vh"
         align="center"

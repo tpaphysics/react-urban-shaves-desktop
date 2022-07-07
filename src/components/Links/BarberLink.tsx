@@ -1,10 +1,10 @@
-import { Icon, Text, TextProps, HStack, Box } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { BsBoxArrowLeft, BsBoxArrowRight } from "react-icons/bs";
+import { Icon, Text, TextProps, HStack, Box } from '@chakra-ui/react';
+import { BsBoxArrowLeft, BsBoxArrowRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 interface BarberLinkProps extends TextProps {
-  direction?: "left" | "right";
-  color?: "white" | "orange";
+  direction?: 'left' | 'right';
+  color?: 'white' | 'orange';
   to: string;
 }
 
@@ -17,7 +17,7 @@ export function BarberLink({
   direction,
   children,
   to,
-  color = "white",
+  color = 'white',
   ...props
 }: BarberLinkProps) {
   return (
@@ -25,12 +25,7 @@ export function BarberLink({
       <Link to={to}>
         <HStack color="pink">
           {direction && (
-            <Icon
-              as={icon[direction]}
-              fontSize="md"
-              fontWeight="normal"
-              color={color}
-            />
+            <Icon as={icon[direction]} fontSize="md" fontWeight="normal" color={color} />
           )}
 
           <Text fontSize="md" fontWeight="normal" color={color}>

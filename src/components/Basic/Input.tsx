@@ -7,18 +7,16 @@ import {
   InputProps,
   InputRightElement,
   Tooltip,
-} from "@chakra-ui/react";
-
-import { FiUser, FiLock, FiMail, FiEye, FiEyeOff } from "react-icons/fi";
-
-import { AiOutlineExclamationCircle } from "react-icons/ai";
-import { useState, useEffect } from "react";
-import { UseFormRegister } from "react-hook-form";
+} from '@chakra-ui/react';
+import { useState, useEffect } from 'react';
+import { UseFormRegister } from 'react-hook-form';
+import { AiOutlineExclamationCircle } from 'react-icons/ai';
+import { FiUser, FiLock, FiMail, FiEye, FiEyeOff } from 'react-icons/fi';
 
 interface BarberInputProps extends InputProps {
   isPassword?: boolean;
   id: string;
-  iconType: "user" | "email" | "lock";
+  iconType: 'user' | 'email' | 'lock';
   errors?: {
     [x: string]: any;
   };
@@ -58,18 +56,13 @@ export function BarberInput({
         <InputLeftElement
           pointerEvents="none"
           height="100%"
-          children={
-            <Icon
-              as={iconsOptions[iconType]}
-              color={isFocused ? "orange" : "gray.hard"}
-            />
-          }
+          children={<Icon as={iconsOptions[iconType]} color={isFocused ? 'orange' : 'gray.hard'} />}
         />
         <Input
           id={id}
           {...props}
           {...register(id)}
-          type={isPassword ? (isVisiblePassword ? "text" : "password") : type}
+          type={isPassword ? (isVisiblePassword ? 'text' : 'password') : type}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           w="340px"
@@ -88,7 +81,6 @@ export function BarberInput({
           />
         )}
         {errors?.[id] && (
-          // eslint-disable-next-line react/jsx-no-useless-fragment
           <>
             {isOpenMessageError ? (
               <Tooltip
@@ -97,14 +89,11 @@ export function BarberInput({
                 color="black.background"
                 hasArrow
                 placement="top"
-                isOpen
-              >
+                isOpen>
                 <InputRightElement
                   h="100%"
                   fontSize={20}
-                  children={
-                    <Icon color="orange" as={AiOutlineExclamationCircle} />
-                  }
+                  children={<Icon color="orange" as={AiOutlineExclamationCircle} />}
                 />
               </Tooltip>
             ) : (
@@ -113,14 +102,11 @@ export function BarberInput({
                 bg="orange"
                 color="black.background"
                 hasArrow
-                placement="top"
-              >
+                placement="top">
                 <InputRightElement
                   h="100%"
                   fontSize={20}
-                  children={
-                    <Icon color="orange" as={AiOutlineExclamationCircle} />
-                  }
+                  children={<Icon color="orange" as={AiOutlineExclamationCircle} />}
                 />
               </Tooltip>
             )}

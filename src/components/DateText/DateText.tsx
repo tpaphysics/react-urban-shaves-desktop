@@ -1,5 +1,6 @@
-import React from "react";
-import { BarberText } from "../Typograph/BarberText";
+import React from 'react';
+
+import { BarberText } from '../Typograph/BarberText';
 
 function DateText() {
   return (

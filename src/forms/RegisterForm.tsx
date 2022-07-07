@@ -1,9 +1,10 @@
-import { VStack } from "@chakra-ui/react";
-import { classValidatorResolver } from "@hookform/resolvers/class-validator";
-import { useForm } from "react-hook-form";
-import BarberButton from "../components/Basic/BarberButton";
-import { BarberInput } from "../components/Basic/Input";
-import { RegisterDto } from "../dto/register.dto";
+import { VStack } from '@chakra-ui/react';
+import { classValidatorResolver } from '@hookform/resolvers/class-validator';
+import { useForm } from 'react-hook-form';
+
+import BarberButton from '../components/Basic/BarberButton';
+import { BarberInput } from '../components/Basic/Input';
+import { RegisterDto } from '../dto/register.dto';
 
 export default function RegisterForm() {
   const resolver = classValidatorResolver(RegisterDto);

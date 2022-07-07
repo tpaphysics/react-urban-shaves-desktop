@@ -1,5 +1,6 @@
-import { ComponentStyleConfig } from "@chakra-ui/react";
-import { colors } from "../config/colors";
+import { ComponentStyleConfig } from '@chakra-ui/react';
+
+import { colors } from '../config/colors';
 
 const { orange, black, orangeHover } = colors;
 
@@ -14,7 +15,7 @@ export const Button: ComponentStyleConfig = {
     },
   },
   defaultProps: {
-    size: "lg",
-    variant: "barber",
+    size: 'lg',
+    variant: 'barber',
   },
 };
