@@ -2,6 +2,8 @@ import { VStack } from '@chakra-ui/react';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import BarberButton from '../components/Basic/BarberButton';
 import { BarberInput } from '../components/Basic/Input';
@@ -24,7 +26,7 @@ export function LoginForm() {
       setTimeout(() => {
         signIn(data)
           .then(() => navigate('dashboard'))
-          .catch((err) => console.log(err));
+          .catch((err) => toast.error(err.response.data.message));
         resolve();
       }, 3000);
     });
@@ -52,6 +54,7 @@ export function LoginForm() {
       <BarberButton mt="6" w="100%" type="submit" isLoading={isSubmitting}>
         Sigin
       </BarberButton>
+      <ToastContainer theme="colored" />
     </form>
   );
 }
