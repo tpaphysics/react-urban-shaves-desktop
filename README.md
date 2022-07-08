@@ -55,13 +55,12 @@ O App web <strong>Urban Shaves</strong> criado para administração de serviços
 
 ## **🔖 Layout**
 
-<p>Criamos a logo <strong>Urban Shaves</strong>, utilizamos a seguinte tabela de cores:
-</p>
+<p>Abaixo segue a tabela de cores do projeto.</p>
 <img alt="paleta" src="./assets/pallet.png" width="300px">
   
 <br/>
   
-Usamos o [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Foi difícil achar um calendário para adaptar ao projeto então decidimos criar um próprio.
+Usamos o [GIMP](https://www.gimp.org/ ) para tratar as imagens e aplicar alguns filtros com base na paleta de cores. Criamos o próprio calendário do projeto.
 
 ## Get Started
 
