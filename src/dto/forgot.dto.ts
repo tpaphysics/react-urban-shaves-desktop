@@ -1,6 +1,6 @@
 import { IsEmail } from 'class-validator';
 
 export class ForgotDto {
-  @IsEmail()
+  //  @IsEmail()
   email!: string;
 }

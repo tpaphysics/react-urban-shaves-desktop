@@ -1,12 +1,14 @@
 import { VStack } from '@chakra-ui/react';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 import BarberButton from '../components/Basic/BarberButton';
 import { BarberInput } from '../components/Basic/Input';
 import { RegisterDto } from '../dto/register.dto';
 import 'react-toastify/dist/ReactToastify.css';
+import RegisterService from '../services/Register.service';
 
 export default function RegisterForm() {
   const resolver = classValidatorResolver(RegisterDto);
@@ -17,10 +19,19 @@ export default function RegisterForm() {
     formState: { errors, isSubmitting },
   } = useForm<RegisterDto>({ resolver });
 
+  const navigate = useNavigate();
+
+  const { createNewUser } = RegisterService;
+
   function onSubmit(data: RegisterDto) {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
-        console.log(data);
+        createNewUser(data)
+          .then(() => {
+            toast.success('User created successfully!');
+            setTimeout(() => navigate('/', { replace: true }), 4000);
+          })
+          .catch((err) => toast.error(err.response.data.message));
         resolve();
       }, 3000);
     });
@@ -59,7 +70,7 @@ export default function RegisterForm() {
       <BarberButton mt="6" w="100%" type="submit" isLoading={isSubmitting}>
         Register
       </BarberButton>
-      <ToastContainer theme="colored" />
+      <ToastContainer theme="colored" autoClose={3000} />
     </form>
   );
 }
