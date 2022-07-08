@@ -1,8 +1,8 @@
 import api from '../../../api/api';
 import { LoginDto } from '../../../dto/login.dto';
-import StorageServices from '../../../services/StorageServices';
+import StorageServices from '../../../services/Storage.service';
 
-const { login, logout, isLogged } = StorageServices;
+const { login, logout, isLogued } = StorageServices;
 
 export default {
   signIn: async (data: LoginDto): Promise<void> => {
@@ -13,6 +13,6 @@ export default {
     logout();
   },
   isAuthenticate: (): boolean => {
-    return isLogged();
+    return isLogued();
   },
 };

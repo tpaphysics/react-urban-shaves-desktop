@@ -1,3 +1,7 @@
+<p align="center">
+<img  src="./assets/desktop/logo.png"/>
+</p>
+
 <div align="center">
 <img src="https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white" alt="Yarn" />
   
@@ -10,13 +14,10 @@
 </div>
 <br/>
 <br/>
-<p align="center">
-<img  src="./assets/desktop/logo.png"/>
-</p>
 
 ## **💻 Projeto**
 
-O projeto <strong>Urban Shaves</strong> foi desenvolvido em [React](https://reactjs.org/) utilizando o [Chakra UI](https://chakra-ui.com/guides/first-steps).
+O App web <strong>Urban Shaves</strong> criado para administração de serviços de babearia está sendo desenvolvido em [React](https://reactjs.org/) utilizando o [Chakra UI](https://chakra-ui.com/guides/first-steps). O projeto possui também uma [versão mobile](https://github.com/tpaphysics/react-native-urban-shaves-mobile) para agendamentos de serviços e uma [API](https://github.com/tpaphysics/nestjs-urban-shaves-api) de integração.
 
 #### **Web**
 

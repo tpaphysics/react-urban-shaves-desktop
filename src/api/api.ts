@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
-import StorageServices from '../services/StorageServices';
+import StorageServices from '../services/Storage.service';
 const { getToken } = StorageServices;
 
 const api = axios.create({
