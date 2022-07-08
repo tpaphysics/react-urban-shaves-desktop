@@ -23,7 +23,7 @@ export const Input: ComponentStyleConfig = {
           bg: orange,
           textFillSize: 'md',
           textFillColor: '#EEEEF2',
-          boxShadow: '0 0 0px 1000px #181B23 inset',
+          boxShadow: `0 0 0px 1000px ${black.inputs} inset`,
           transition: 'background-color 5000s ease-in-out 0s',
         },
       },
