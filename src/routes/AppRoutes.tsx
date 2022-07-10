@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import { Dashboard } from '../pages/Dashboard';
 import ForgotPassword from '../pages/ForgotPassword';
@@ -13,6 +13,7 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="*" element={<IsLogged component={<Navigate to="/" />} />} />
         <Route path="/" element={<IsLogged component={<Login />} />} />
         <Route path="/register" element={<IsLogged component={<Register />} />} />
         <Route path="/forgot" element={<IsLogged component={<ForgotPassword />} />} />
