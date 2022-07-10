@@ -1,6 +1,7 @@
-import api from '../../../api/api';
-import { LoginDto } from '../../../dto/login.dto';
-import StorageServices from '../../../services/Storage.service';
+import api from '../../api/api';
+import { LoginDto } from '../../dto/login.dto';
+import StorageServices from '../../services/storage.service';
+import { IAuthContext } from './interface';
 
 const { login, logout, isLogged } = StorageServices;
 
@@ -15,4 +16,4 @@ export default {
   isAuthenticate: (): boolean => {
     return isLogged();
   },
-};
+} as IAuthContext;

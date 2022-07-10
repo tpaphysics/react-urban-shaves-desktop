@@ -8,7 +8,7 @@ import BarberButton from '../components/Basic/BarberButton';
 import { BarberInput } from '../components/Basic/Input';
 import { RegisterDto } from '../dto/register.dto';
 import 'react-toastify/dist/ReactToastify.css';
-import RegisterService from '../services/Register.service';
+import RegisterService from '../services/register.service';
 
 export default function RegisterForm() {
   const resolver = classValidatorResolver(RegisterDto);

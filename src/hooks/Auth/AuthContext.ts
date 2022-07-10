@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { IAuthContext } from '../interface/IAuthContext';
+import { IAuthContext } from './interface';
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 

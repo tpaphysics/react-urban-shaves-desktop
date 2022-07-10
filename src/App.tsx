@@ -1,4 +1,4 @@
-import { AuthProvider } from './hooks/Auth/provider/AuthProvider';
+import { AuthProvider } from './hooks/Auth/AuthProvider';
 import AppRoutes from './routes/AppRoutes';
 
 function App() {

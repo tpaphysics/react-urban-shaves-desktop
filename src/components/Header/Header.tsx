@@ -4,7 +4,7 @@ import { useLayoutEffect, useState } from 'react';
 import logoSmall from '../../../assets/logo-sm.png';
 import logo from '../../../assets/logo.png';
 import { User } from '../../entities/user';
-import StorageService from '../../services/Storage.service';
+import StorageService from '../../services/storage.service';
 import SideBar from '../Sidebar/SideBar';
 import { AvatarUserProfile } from './parts/AvatarUserProfile';
 import OpenSideBarButton from './parts/OpenSideBarButton';

@@ -1,7 +1,7 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 
-import AuthContext from '../context/AuthContext';
-import AuthService from '../service/Auth.service';
+import AuthContext from './AuthContext';
+import AuthService from './auth.service';
 
 interface AuthProviderProps {
   children: ReactNode;

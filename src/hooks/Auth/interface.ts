@@ -1,4 +1,4 @@
-import { LoginDto } from '../../../dto/login.dto';
+import { LoginDto } from '../../dto/login.dto';
 
 export interface IAuthContext {
   signIn: (data: LoginDto) => Promise<void>;
