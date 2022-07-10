@@ -1,18 +1,31 @@
 import { Flex, Heading, Image, useBreakpointValue } from '@chakra-ui/react';
+import { useLayoutEffect, useState } from 'react';
 
 import logoSmall from '../../../assets/logo-sm.png';
 import logo from '../../../assets/logo.png';
+import { User } from '../../entities/user';
+import StorageService from '../../services/Storage.service';
 import SideBar from '../Sidebar/SideBar';
-import { HeaderProps } from './interfaces';
 import { AvatarUserProfile } from './parts/AvatarUserProfile';
 import OpenSideBarButton from './parts/OpenSideBarButton';
 import SignOutButton from './parts/SignOutButton';
 
-export function Header({ avatar, message, name }: HeaderProps) {
+export function Header() {
+  const [user, setUser] = useState<User | null>({} as User | null);
+  const { getUser } = StorageService;
+  useLayoutEffect(() => {
+    return () => {
+      setUser(() => getUser());
+    };
+  }, []);
+
+  const { email, name, avatar } = user as User;
+
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
   });
+
   return (
     <Heading
       display="flex"
@@ -32,7 +45,7 @@ export function Header({ avatar, message, name }: HeaderProps) {
             ml="16"
             avatar={avatar}
             name={name}
-            message={message}
+            message={email}
             type="header"
           />
           <SignOutButton ml="auto" />
@@ -40,7 +53,7 @@ export function Header({ avatar, message, name }: HeaderProps) {
       ) : (
         <Flex w="100%" justify="space-between" align="center">
           <OpenSideBarButton ml="auto" />
-          <SideBar name={name} avatar={avatar} type="header" message="Be Welcome" />
+          <SideBar name={name} avatar={avatar} type="header" message={email} />
         </Flex>
       )}
     </Heading>

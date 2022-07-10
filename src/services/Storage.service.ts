@@ -16,9 +16,10 @@ export default {
     return false;
   },
   getUser: (): User | null => {
-    const user = localStorage.getItem('user:$$UrbanShaves@@');
-    if (user) {
-      return JSON.parse(user);
+    const userReturn = localStorage.getItem('user:$$UrbanShaves@@');
+    if (userReturn) {
+      const { _, user } = JSON.parse(userReturn);
+      return user;
     }
     return null;
   },

@@ -17,14 +17,12 @@ export function Dashboard() {
     lg: true,
   });
   useEffect(() => {
-    return () => {
-      signIn({ email: 'kjljl', password: 'jlkjljk' });
-    };
+    return () => {};
   }, []);
 
   return (
     <VStack h="100%" w="100%" minH="100vh" minW="100vw" spacing="0">
-      <Header name="Richard Blake" avatar="https://i.pravatar.cc/400?img=11" message="Be Welcome" />
+      <Header />
 
       <Flex
         flex="1"
