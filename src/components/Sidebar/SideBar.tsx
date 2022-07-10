@@ -5,12 +5,14 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  Flex,
 } from '@chakra-ui/react';
 import React from 'react';
 
 import { useSidebarDrawer } from '../../hooks/SideBar';
 import { AvatarUserProfileProps } from '../Header/interfaces';
 import { AvatarUserProfile } from '../Header/parts/AvatarUserProfile';
+import SignOutButton from '../Header/parts/SignOutButton';
 
 export default function SideBar({ ...avatarProps }: AvatarUserProfileProps) {
   const { isOpen, onClose } = useSidebarDrawer();
@@ -21,7 +23,10 @@ export default function SideBar({ ...avatarProps }: AvatarUserProfileProps) {
         <DrawerContent bg="black.inputs">
           <DrawerCloseButton mt="2" />
           <DrawerHeader m="0">
-            <AvatarUserProfile cursor="pointer" {...avatarProps} />
+            <Flex alignItems="center">
+              <AvatarUserProfile cursor="pointer" {...avatarProps} />
+              <SignOutButton ml="4" />
+            </Flex>
           </DrawerHeader>
 
           <DrawerBody>Menu</DrawerBody>

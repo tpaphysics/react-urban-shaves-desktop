@@ -52,7 +52,7 @@ export function LoginForm() {
       </VStack>
 
       <BarberButton mt="6" w="100%" type="submit" isLoading={isSubmitting}>
-        Sigin
+        Sign in
       </BarberButton>
       <ToastContainer theme="colored" />
     </form>

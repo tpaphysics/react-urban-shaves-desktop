@@ -1,16 +1,14 @@
-import { Box, Flex, Heading, Image, useBreakpointValue } from '@chakra-ui/react';
-import Hamburger from 'hamburger-react';
-import React from 'react';
+import { Flex, Heading, Image, useBreakpointValue } from '@chakra-ui/react';
 
 import logoSmall from '../../../assets/logo-sm.png';
 import logo from '../../../assets/logo.png';
-import { useSidebarDrawer } from '../../hooks/SideBar';
 import SideBar from '../Sidebar/SideBar';
 import { HeaderProps } from './interfaces';
 import { AvatarUserProfile } from './parts/AvatarUserProfile';
+import OpenSideBarButton from './parts/OpenSideBarButton';
+import SignOutButton from './parts/SignOutButton';
 
 export function Header({ avatar, message, name }: HeaderProps) {
-  const { onToggle, isOpen } = useSidebarDrawer();
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
@@ -26,9 +24,9 @@ export function Header({ avatar, message, name }: HeaderProps) {
       position={isWideVersion ? 'unset' : 'sticky'}
       top="0"
       zIndex="9">
+      {isWideVersion ? <Image src={logo} /> : <Image src={logoSmall} mb="1" />}
       {isWideVersion ? (
         <>
-          <Image src={logo} />
           <AvatarUserProfile
             cursor="pointer"
             ml="16"
@@ -37,13 +35,11 @@ export function Header({ avatar, message, name }: HeaderProps) {
             message={message}
             type="header"
           />
+          <SignOutButton ml="auto" />
         </>
       ) : (
         <Flex w="100%" justify="space-between" align="center">
-          <Image src={logoSmall} mb="1" />
-          <Box color="orangeFontHard">
-            <Hamburger size={24} toggled={isOpen} onToggle={onToggle} />
-          </Box>
+          <OpenSideBarButton ml="auto" />
           <SideBar name={name} avatar={avatar} type="header" message="Be Welcome" />
         </Flex>
       )}

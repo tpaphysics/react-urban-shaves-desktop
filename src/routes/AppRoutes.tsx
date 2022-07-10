@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import useAuth from '../hooks/Auth';
 import { Dashboard } from '../pages/Dashboard';
 import ForgotPassword from '../pages/ForgotPassword';
 import Login from '../pages/Login';
