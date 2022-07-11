@@ -6,6 +6,6 @@ export class LoginDto {
   email!: string;
 
   @IsString()
-  @Length(6, 15)
+  //@Length(6, 15)
   password!: string;
 }

@@ -5,8 +5,6 @@ export class User {
 
   name!: string;
 
-  password!: string;
-
   avatar?: string;
 
   createdAt?: string | Date;
