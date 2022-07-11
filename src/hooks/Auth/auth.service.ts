@@ -4,7 +4,7 @@ import { User } from '../../entities/user';
 import StorageServices from '../../services/storage.service';
 import { IAuthContext } from './interface';
 
-const { login, logout, isLogged, getUser, setStorageUser } = StorageServices;
+const { login, logout, isLogged, getUser } = StorageServices;
 
 export default {
   signIn: async (data: LoginDto) => {
@@ -14,7 +14,7 @@ export default {
   signOut: async () => {
     logout();
   },
-  isAuthenticate: (): boolean => {
+  isAuthenticate: () => {
     return isLogged();
   },
   currentUser: getUser(),

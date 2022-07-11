@@ -1,10 +1,9 @@
-import { IsOptional, Length, ValidateIf } from 'class-validator';
+import { IsNotEmpty, IsOptional, Length, ValidateIf } from 'class-validator';
 
 //import { Match } from '../decorators/match.decorator';
 
 export class ProfileDto {
-  @IsOptional()
-  @ValidateIf((field) => field.name !== '')
+  @IsNotEmpty()
   //@Length(6, 15)
   name?: string;
 

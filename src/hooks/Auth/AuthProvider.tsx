@@ -10,7 +10,6 @@ const { signIn, signOut, isAuthenticate, currentUser } = AuthService;
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState(currentUser);
-  //const [isAuth, setIsAuth] = useState(isAuthenticate());
 
   useEffect(() => {
     return () => {};

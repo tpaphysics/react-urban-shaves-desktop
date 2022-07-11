@@ -4,6 +4,7 @@ import { useLayoutEffect, useState } from 'react';
 import logoSmall from '../../../assets/logo-sm.png';
 import logo from '../../../assets/logo.png';
 import { User } from '../../entities/user';
+import useAuth from '../../hooks/Auth';
 import StorageService from '../../services/storage.service';
 import SideBar from '../Sidebar/SideBar';
 import { AvatarUserProfile } from './parts/AvatarUserProfile';
@@ -11,15 +12,8 @@ import OpenSideBarButton from './parts/OpenSideBarButton';
 import SignOutButton from './parts/SignOutButton';
 
 export function Header() {
-  const [user, setUser] = useState<User | null>({} as User | null);
-  const { getUser } = StorageService;
-  useLayoutEffect(() => {
-    return () => {
-      setUser(() => getUser());
-    };
-  }, []);
-
-  const { email, name, avatar } = user as User;
+  const { currentUser: user } = useAuth();
+  const { email, name, avatar } = user;
 
   const isWideVersion = useBreakpointValue({
     base: false,
