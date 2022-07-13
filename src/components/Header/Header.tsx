@@ -14,6 +14,7 @@ import SignOutButton from './parts/SignOutButton';
 export function Header() {
   const { currentUser: user } = useAuth();
   const { email, name, avatar } = user;
+  console.log(avatar);
 
   const isWideVersion = useBreakpointValue({
     base: false,

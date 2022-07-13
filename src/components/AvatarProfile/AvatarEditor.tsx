@@ -20,35 +20,24 @@ import { AiOutlineCamera } from 'react-icons/ai';
 import { MdGraphicEq } from 'react-icons/md';
 import { PuffLoader } from 'react-spinners';
 
+import useAuth from '../../hooks/Auth';
 import { colors } from '../../theme/config/colors';
-
-const image = 'https://images.unsplash.com/photo-1572958731731-2b7fdb0a9818';
 
 interface AvatarEditorProps {
   avatar: string;
 }
 
 export function AvatarEditor() {
+  const { currentUser: user } = useAuth();
+  const { avatar } = user;
   const [preview, setPreview] = useState(null);
   const [scale, setScale] = useState(1);
   const cropper = createRef<any>();
-  const [file, setFile] = useState<any>('');
-  const [loadImage, setLoadImage] = useState(true);
+  const [file, setFile] = useState<any>(avatar);
 
   const getImagePreview = () => {
     setPreview(cropper.current.getImageScaledToCanvas().toDataURL());
   };
-  useEffect(() => {
-    return () => {
-      setLoadImage(true);
-      setTimeout(
-        () => setFile('https://images.unsplash.com/photo-1572958731731-2b7fdb0a9818'),
-        2000
-      );
-
-      setLoadImage(false);
-    };
-  }, [loadImage]);
 
   function onTeste(event: Event) {
     const target = event.target as HTMLInputElement;

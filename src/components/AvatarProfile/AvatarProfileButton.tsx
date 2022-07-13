@@ -1,19 +1,22 @@
 import { Flex, Avatar, AvatarBadge, Icon } from '@chakra-ui/react';
 import { AiOutlineCamera } from 'react-icons/ai';
 
+import useAuth from '../../hooks/Auth';
+
 interface AvatarProfileButtonProps {
-  src: string;
   onClick: () => void;
 }
 
-export default function AvatarProfileButton({ src, onClick }: AvatarProfileButtonProps) {
+export default function AvatarProfileButton({ onClick }: AvatarProfileButtonProps) {
+  const { currentUser: user } = useAuth();
+  const { avatar } = user;
   return (
     <Flex w="100%" justify="center" mb="8">
       <Avatar
         size="2xl"
         position="relative"
         name="Richard"
-        src={src}
+        src={avatar}
         // filter="grayscale(75)"
       >
         <AvatarBadge
@@ -24,7 +27,6 @@ export default function AvatarProfileButton({ src, onClick }: AvatarProfileButto
           onClick={onClick}
           children={<Icon as={AiOutlineCamera} w="6" color="black.background" />}
         />
-        <input type="file" />
       </Avatar>
     </Flex>
   );

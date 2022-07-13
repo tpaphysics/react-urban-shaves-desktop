@@ -3,9 +3,11 @@ import { BsBoxArrowInRight } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 
 import useAuth from '../../../hooks/Auth';
+import { useSidebarDrawer } from '../../../hooks/SideBar';
 
 export default function SignOutButton({ ...props }: IconProps) {
   const { signOut } = useAuth();
+  const { onClose } = useSidebarDrawer();
   const navigation = useNavigate();
   return (
     <Icon

@@ -8,6 +8,7 @@ import {
   Flex,
 } from '@chakra-ui/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { useSidebarDrawer } from '../../hooks/SideBar';
 import { AvatarUserProfileProps } from '../Header/interfaces';
