@@ -16,7 +16,7 @@ const nullFildsFilter = (obj: any): any => {
 };
 
 export default {
-  updateUser: async (data: any, id: string): Promise<User> => {
+  updateUser: async (data: any, id: string): Promise<any> => {
     return await api.patch(`users/${id}`, nullFildsFilter(data));
   },
   updateStorageUserAndSetUser: (cb: Dispatch<React.SetStateAction<User>>, user: User) => {

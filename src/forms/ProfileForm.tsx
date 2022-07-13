@@ -1,6 +1,5 @@
 import { VStack } from '@chakra-ui/react';
 import { classValidatorResolver } from '@hookform/resolvers/class-validator';
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
@@ -32,7 +31,7 @@ export default function ProfileForm() {
       setTimeout(() => {
         updateUser(data, id as string)
           .then((response) => {
-            updateStorageUserAndSetUser(setUser, response.data as unknown as User);
+            updateStorageUserAndSetUser(setUser, response.data as User);
             toast.success('User updated successfully!');
             setTimeout(() => navigate('/dashboard', { replace: true }), 4000);
           })

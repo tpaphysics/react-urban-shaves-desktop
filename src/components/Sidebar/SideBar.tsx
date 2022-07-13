@@ -24,7 +24,7 @@ export default function SideBar({ ...avatarProps }: AvatarUserProfileProps) {
           <DrawerCloseButton mt="2" />
           <DrawerHeader m="0">
             <Flex alignItems="center">
-              <AvatarUserProfile cursor="pointer" {...avatarProps} />
+              <AvatarUserProfile cursor="pointer" {...avatarProps} onClick={onClose} />
               <SignOutButton ml="4" />
             </Flex>
           </DrawerHeader>

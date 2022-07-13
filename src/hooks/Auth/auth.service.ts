@@ -1,6 +1,5 @@
 import api from '../../api/api';
 import { LoginDto } from '../../dto/login.dto';
-import { User } from '../../entities/user';
 import StorageServices from '../../services/storage.service';
 import { IAuthContext } from './interface';
 
