@@ -19,12 +19,14 @@ import {
   SliderTrack,
   VStack,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Cropper from 'react-avatar-editor';
 import { AiOutlineCamera } from 'react-icons/ai';
 import { MdGraphicEq } from 'react-icons/md';
+import { toast, ToastContainer } from 'react-toastify';
 
 import useAuth from '../../hooks/Auth';
+import { imageValidator } from './validator.service';
 
 interface PictureProps {
   img: string | File;
@@ -45,17 +47,25 @@ export default function AvatarEditorProfile() {
     croppedImg: avatar,
   } as PictureProps);
 
-  function handleFileChange(event: Event) {
-    const target = event.target as HTMLInputElement;
-    const file: File = (target.files as FileList)[0];
-    const url = URL.createObjectURL(file);
-    setPicture({
-      ...picture,
-      img: url,
-    });
-    // eslint-disable-next-line no-unused-expressions
-    onOpen();
-  }
+  const handleFileChange = useCallback((event: Event) => {
+    try {
+      const target = event.target as HTMLInputElement;
+      const file: File = (target.files as FileList)[0];
+      imageValidator(file);
+      const url = URL.createObjectURL(file);
+      console.log(file);
+      setPicture({
+        ...picture,
+        img: url,
+      });
+      // eslint-disable-next-line no-unused-expressions
+      onOpen();
+    } catch (err: any) {
+      toast.warn(err.message);
+      onClose();
+    }
+  }, []);
+
   function handleSlider(value: number) {
     setPicture({
       ...picture,
@@ -99,7 +109,12 @@ export default function AvatarEditorProfile() {
           // filter="grayscale(75)"
         >
           <AvatarBadge as="label" boxSize="0.9em" bg="orange" border="none" cursor="pointer">
-            <input type="file" style={{ display: 'none' }} onChange={handleFileChange as any} />
+            <input
+              type="file"
+              style={{ display: 'none' }}
+              onChange={handleFileChange as any}
+              accept="image/*"
+            />
 
             <Icon as={AiOutlineCamera} w="6" color="black.background" />
           </AvatarBadge>
@@ -118,7 +133,7 @@ export default function AvatarEditorProfile() {
                 scale={picture.zoom}
                 width={250}
                 height={250}
-                border={18}
+                border={24}
                 borderRadius={250}
                 crossOrigin="anonymous"
               />
@@ -157,6 +172,7 @@ export default function AvatarEditorProfile() {
           </ModalFooter>
         </ModalContent>
       </Modal>
+      <ToastContainer theme="colored" autoClose={3000} />
     </>
   );
 }
