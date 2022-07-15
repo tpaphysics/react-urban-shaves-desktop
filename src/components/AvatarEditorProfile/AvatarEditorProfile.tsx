@@ -86,7 +86,6 @@ export default function AvatarEditorProfile() {
       const urlCroppedImg = canvasScaled.toDataURL();
       const croppedFile = await urlToFile(urlCroppedImg, 'avatarResize', picture.fileType);
       const res = await avatarUpdate(croppedFile, id as string);
-      console.log(res);
       updateStorageUserAndSetUser(setUser, res.data);
 
       setPicture({
