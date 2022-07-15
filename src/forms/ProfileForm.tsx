@@ -6,6 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 import BarberButton from '../components/Basic/BarberButton';
 import { BarberInput } from '../components/Basic/Input';
+// eslint-disable-next-line import/order
 import { ProfileDto } from '../dto/profile.dto';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -73,6 +74,14 @@ export default function ProfileForm() {
           errors={errors}
           iconType="lock"
           placeholder="Password"
+          isPassword
+        />
+        <BarberInput
+          id="newPassword"
+          register={register}
+          errors={errors}
+          iconType="lock"
+          placeholder="New password"
           isPassword
         />
       </VStack>

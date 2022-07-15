@@ -14,7 +14,7 @@ import {
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-import AvatarEditorProfile from '../components/AvatarEditorProfile/AvatarEditorProfileButton';
+import AvatarEditorProfile from '../components/AvatarEditorProfile/AvatarEditorProfile';
 import { BarberText } from '../components/Typograph/BarberText';
 import ProfileForm from '../forms/ProfileForm';
 

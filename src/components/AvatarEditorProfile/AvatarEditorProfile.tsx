@@ -26,39 +26,46 @@ import { MdGraphicEq } from 'react-icons/md';
 import { toast, ToastContainer } from 'react-toastify';
 
 import useAuth from '../../hooks/Auth';
-import { imageValidator } from './validator.service';
+import profileService from '../../services/profile.service';
+import AvatarEditorService from './avatar.editor.service';
 
 interface PictureProps {
   img: string | File;
   zoom: number;
-  croppedImg: string;
+  urlCroppedImg: string;
+  fileType: string;
 }
+
+const { updateStorageUserAndSetUser } = profileService;
 
 export default function AvatarEditorProfile() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { avatarUpdate, imageValidator, urlToFile } = AvatarEditorService;
 
-  const { currentUser: user } = useAuth();
-  const { avatar } = user;
+  const { currentUser: user, setUser } = useAuth();
+  const { avatar, id } = user;
 
   let editor = {} as any;
   const [picture, setPicture] = useState<PictureProps>({
     img: '',
     zoom: 1,
-    croppedImg: avatar,
+    urlCroppedImg: avatar,
+    fileType: '',
   } as PictureProps);
 
   const handleFileChange = useCallback((event: Event) => {
     try {
       const target = event.target as HTMLInputElement;
       const file: File = (target.files as FileList)[0];
-      imageValidator(file);
-      const url = URL.createObjectURL(file);
-      console.log(file);
-      setPicture({
-        ...picture,
-        img: url,
-      });
-      // eslint-disable-next-line no-unused-expressions
+      if (file) {
+        imageValidator(file);
+        const url = URL.createObjectURL(file);
+        setPicture({
+          ...picture,
+          img: url,
+          fileType: file.type,
+        });
+      }
       onOpen();
     } catch (err: any) {
       toast.warn(err.message);
@@ -73,15 +80,20 @@ export default function AvatarEditorProfile() {
     });
   }
 
-  function handleSave() {
+  async function handleSave() {
     if (editor) {
       const canvasScaled = editor.getImageScaledToCanvas();
-      const croppedImg = canvasScaled.toDataURL();
+      const urlCroppedImg = canvasScaled.toDataURL();
+      const croppedFile = await urlToFile(urlCroppedImg, 'avatarResize', picture.fileType);
+      const res = await avatarUpdate(croppedFile, id as string);
+      console.log(res);
+      updateStorageUserAndSetUser(setUser, res.data);
 
       setPicture({
+        ...picture,
         zoom: 1,
         img: '',
-        croppedImg,
+        urlCroppedImg,
       });
       onClose();
     }
@@ -90,6 +102,7 @@ export default function AvatarEditorProfile() {
   function handleCancel() {
     setPicture({
       ...picture,
+      urlCroppedImg: avatar as string,
       zoom: 1,
     });
     onClose();
@@ -105,7 +118,7 @@ export default function AvatarEditorProfile() {
           size="2xl"
           position="relative"
           name="Richard"
-          src={picture.croppedImg}
+          src={picture.urlCroppedImg}
           // filter="grayscale(75)"
         >
           <AvatarBadge as="label" boxSize="0.9em" bg="orange" border="none" cursor="pointer">
